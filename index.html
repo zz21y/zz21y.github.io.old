@@ -93,12 +93,12 @@
         <blockquote>
 <p>在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。<br>请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">Find</span><span class="params">(<span class="keyword">int</span> target, <span class="keyword">int</span>[][] array)</span> </span>&#123;<span class="keyword">int</span> n = array.length - <span class="number">1</span>;<span class="keyword">int</span> m = array[<span class="number">0</span>].length - <span class="number">1</span>;<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = m; i &lt;= n &amp;&amp; j &gt;= <span class="number">0</span>;) &#123;</div><div class="line">		<span class="keyword">if</span> (array[i][j] == target) &#123;</div><div class="line">					<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span> (array[i][j] &gt; target) &#123;</div><div class="line">					j--;</div><div class="line">				&#125; <span class="keyword">else</span> <span class="keyword">if</span> (array[i][j] &lt; target) &#123;</div><div class="line">					i++;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">		&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">Find</span><span class="params">(<span class="keyword">int</span> target, <span class="keyword">int</span>[][] array)</span></span>&#123;</div><div class="line"><span class="keyword">int</span> n = array.length - <span class="number">1</span>;<span class="keyword">int</span> m = array[<span class="number">0</span>].length - <span class="number">1</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = m; i &lt;= n &amp;&amp; j &gt;= <span class="number">0</span>;) &#123;</div><div class="line">		<span class="keyword">if</span> (array[i][j] == target) &#123;</div><div class="line">					<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span> (array[i][j] &gt; target) &#123;</div><div class="line">					j--;</div><div class="line">				&#125; <span class="keyword">else</span> <span class="keyword">if</span> (array[i][j] &lt; target) &#123;</div><div class="line">					i++;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">		&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/23/二维数组中的查找/" data-id="cj4drj14t0000u06xn1mjt6e9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/23/二维数组中的查找/" data-id="cj4drle8400010g6xr3dp0m0b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/剑指offer/">剑指offer</a></li></ul>
@@ -145,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/23/hello-world/" data-id="cj4drj1600003u06xbcny91en" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/23/hello-world/" data-id="cj4drle7q00000g6xssr01hq2" class="article-share-link">Share</a>
       
       
     </footer>
