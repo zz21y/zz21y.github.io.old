@@ -266,7 +266,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/24/算法/数组/把数组排成最小的数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/算法/剑指offer/位运算/二进制中1的个数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -285,7 +285,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/24/算法/数组/把数组排成最小的数/" itemprop="url">把数组排成最小的数</a></h1>
+                <a class="post-title-link" href="/2017/06/30/算法/剑指offer/位运算/二进制中1的个数/" itemprop="url">二进制中1的个数</a></h1>
         
 
         <div class="post-meta">
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-24T16:56:34+08:00">
-                2017-06-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T10:31:05+08:00">
+                2017-06-30
               </time>
             
 
@@ -331,8 +331,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/时间效率/" itemprop="url" rel="index">
-                    <span itemprop="name">时间效率</span>
+                  <a href="/categories/剑指offer/位运算/" itemprop="url" rel="index">
+                    <span itemprop="name">位运算</span>
                   </a>
                 </span>
 
@@ -368,9 +368,746 @@
         
           
             <blockquote>
-<p>输入一个正整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。例如输入数组{3，32，321}，则打印出这三个数字能排成的最小数字为321323。</p>
+<p>输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">PrintMinNumber</span><span class="params">(<span class="keyword">int</span>[] numbers)</span> </span>&#123;</div><div class="line">	String[] s = <span class="keyword">new</span> String[numbers.length];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numbers.length; i++) &#123;</div><div class="line">		s[i] = String.valueOf(numbers[i]);</div><div class="line">	&#125;</div><div class="line">	Arrays.sort(s, <span class="keyword">new</span> Comparator&lt;String&gt;()&#123;</div><div class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(String o1, String o2)</span> </span>&#123;</div><div class="line">			StringBuffer sb1= <span class="keyword">new</span> StringBuffer();</div><div class="line">			StringBuffer sb2= <span class="keyword">new</span> StringBuffer();</div><div class="line">			sb1.append(o1);</div><div class="line">			sb1.append(o2);</div><div class="line">			sb2.append(o2);</div><div class="line">			sb2.append(o1);</div><div class="line">			<span class="keyword">return</span> sb1.toString().compareTo(sb2.toString());</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">	StringBuffer sb= <span class="keyword">new</span> StringBuffer();</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numbers.length; i++) &#123;</div><div class="line">		sb.append(s[i]);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span>  sb.toString();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">NumberOf1</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">	String s = Integer.toBinaryString(n);</div><div class="line">	<span class="keyword">int</span> count =<span class="number">0</span>;</div><div class="line">	<span class="keyword">char</span>[] c =s.toCharArray();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;c.length;i++)&#123;</div><div class="line">		<span class="keyword">if</span>(c[i]==<span class="string">'1'</span>)&#123;</div><div class="line">			count++;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> count;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/算法/剑指offer/链表/反转链表/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zz21y">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zz21y">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/30/算法/剑指offer/链表/反转链表/" itemprop="url">反转链表</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T10:31:05+08:00">
+                2017-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/" itemprop="url" rel="index">
+                    <span itemprop="name">剑指offer</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/代码的鲁棒性/" itemprop="url" rel="index">
+                    <span itemprop="name">代码的鲁棒性</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>输入一个链表，反转链表后，输出链表的所有元素。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListNode</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> val;</div><div class="line">	ListNode next = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">	ListNode(<span class="keyword">int</span> val) &#123;</div><div class="line">		<span class="keyword">this</span>.val = val;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">ReverseList</span><span class="params">(ListNode head)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (head == <span class="keyword">null</span>)</div><div class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">	ListNode newHead = <span class="keyword">null</span>;</div><div class="line">	ListNode pNode = head;</div><div class="line">	ListNode pPrev = <span class="keyword">null</span>;</div><div class="line">	<span class="keyword">while</span> (pNode != <span class="keyword">null</span>) &#123;</div><div class="line">		ListNode pNext = pNode.next;</div><div class="line">		<span class="keyword">if</span> (pNext == <span class="keyword">null</span>)</div><div class="line">			newHead = pNode;</div><div class="line">		pNode.next = pPrev;</div><div class="line">		pPrev = pNode;</div><div class="line">		pNode = pNext;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> newHead;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/算法/剑指offer/位运算/不用加减乘除做加法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zz21y">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zz21y">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/30/算法/剑指offer/位运算/不用加减乘除做加法/" itemprop="url">不用加减乘除做加法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T10:31:05+08:00">
+                2017-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/" itemprop="url" rel="index">
+                    <span itemprop="name">剑指offer</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/发散思维能力/" itemprop="url" rel="index">
+                    <span itemprop="name">发散思维能力</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>不使用加减乘除实现加法</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> num1, <span class="keyword">int</span> num2)</span> </span>&#123;</div><div class="line">	<span class="keyword">while</span> (num2 != <span class="number">0</span>) &#123;</div><div class="line">		<span class="keyword">int</span> temp = num1 ^ num2;</div><div class="line">		num2 = (num1 &amp; num2) &lt;&lt; <span class="number">1</span>;</div><div class="line">		num1 = temp;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> num1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/算法/剑指offer/数组/调整数组顺序使奇数位于偶数前面/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zz21y">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zz21y">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/30/算法/剑指offer/数组/调整数组顺序使奇数位于偶数前面/" itemprop="url">调整数组顺序使奇数位于偶数前面</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T10:31:05+08:00">
+                2017-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/" itemprop="url" rel="index">
+                    <span itemprop="name">剑指offer</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/代码的完整性/" itemprop="url" rel="index">
+                    <span itemprop="name">代码的完整性</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>输入一个整数数组，实现一个函数来调整该数组中数字的顺序，<br>使得所有的奇数位于数组的前半部分，所有的偶数位于位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">reOrderArray</span><span class="params">(<span class="keyword">int</span>[] array)</span> </span>&#123;</div><div class="line">	ArrayList&lt;Integer&gt; list1 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">	ArrayList&lt;Integer&gt; list2 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</div><div class="line">		<span class="keyword">if</span>(array[i]%<span class="number">2</span>==<span class="number">0</span>)&#123;</div><div class="line">			list2.add(array[i]);</div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			list1.add(array[i]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;list1.size();i++)&#123;</div><div class="line">		array[i]=list1.get(i);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;list2.size();i++)&#123;</div><div class="line">		array[i+list1.size()]=list2.get(i);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/算法/剑指offer/其他/丑数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zz21y">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zz21y">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/30/算法/剑指offer/其他/丑数/" itemprop="url">丑数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T10:31:05+08:00">
+                2017-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/" itemprop="url" rel="index">
+                    <span itemprop="name">剑指offer</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/时间空间效率的平衡/" itemprop="url" rel="index">
+                    <span itemprop="name">时间空间效率的平衡</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>把只包含因子2、3和5的数称作丑数（Ugly Number）。例如6、8都是丑数，但14不是，因为它包含因子7。 习惯上我们把1当做是第一个丑数。求按从小到大的顺序的第N个丑数。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">final</span> <span class="keyword">int</span> d[] = &#123; <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span> &#125;;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">GetUglyNumber_Solution</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (index == <span class="number">0</span>)</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> a[] = <span class="keyword">new</span> <span class="keyword">int</span>[index];</div><div class="line">	a[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> p[] = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span> &#125;;</div><div class="line">	<span class="keyword">int</span> num[] = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span> &#125;;</div><div class="line">	<span class="keyword">int</span> cur = <span class="number">1</span>;</div><div class="line">	<span class="keyword">while</span> (cur &lt; index) &#123;</div><div class="line">		<span class="keyword">int</span> m = finMin(num[<span class="number">0</span>], num[<span class="number">1</span>], num[<span class="number">2</span>]);</div><div class="line">		<span class="keyword">if</span> (a[cur - <span class="number">1</span>] &lt; num[m])</div><div class="line">			a[cur++] = num[m];</div><div class="line">		p[m] += <span class="number">1</span>;</div><div class="line">		num[m] = a[p[m]] * d[m];</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> a[index - <span class="number">1</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">finMin</span><span class="params">(<span class="keyword">int</span> num2, <span class="keyword">int</span> num3, <span class="keyword">int</span> num5)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> min = Math.min(num2, Math.min(num3, num5));</div><div class="line">	<span class="keyword">return</span> min == num2 ? <span class="number">0</span> : min == num3 ? <span class="number">1</span> : <span class="number">2</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/29/算法/剑指offer/链表/复杂链表的复制/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zz21y">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zz21y">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/29/算法/剑指offer/链表/复杂链表的复制/" itemprop="url">复杂链表的复制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T17:15:18+08:00">
+                2017-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/" itemprop="url" rel="index">
+                    <span itemprop="name">剑指offer</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/分解让复杂问题简单/" itemprop="url" rel="index">
+                    <span itemprop="name">分解让复杂问题简单</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>输入一个复杂链表（每个节点中有节点值，以及两个指针，一个指向下一个。另一个特殊指针指向任意一个节点），返回结果为复制后复杂链表的head。（注意，输出结果中请不要返回参数中的节点引用，否则判题程序会直接返回空）</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RandomListNode</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> label;</div><div class="line">	RandomListNode next = <span class="keyword">null</span>;</div><div class="line">	RandomListNode random = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">	RandomListNode(<span class="keyword">int</span> label) &#123;</div><div class="line">		<span class="keyword">this</span>.label = label;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> RandomListNode <span class="title">Clone</span><span class="params">(RandomListNode pHead)</span> </span>&#123;</div><div class="line">	HashMap&lt;RandomListNode, RandomListNode&gt; map = <span class="keyword">new</span> HashMap&lt;RandomListNode, RandomListNode&gt;();</div><div class="line">	RandomListNode node =pHead;</div><div class="line">	<span class="keyword">while</span>(node!=<span class="keyword">null</span>)&#123;</div><div class="line">		map.put(node, <span class="keyword">new</span> RandomListNode(node.label));</div><div class="line">		node = node.next;</div><div class="line">	&#125;</div><div class="line">	node =pHead;</div><div class="line">	<span class="keyword">while</span>(node!=<span class="keyword">null</span>)&#123;</div><div class="line">		map.get(node).next=map.get(node.next);</div><div class="line">		map.get(node).random=map.get(node.random);</div><div class="line">		node=node.next;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> map.get(pHead);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -414,7 +1151,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/23/算法/数组/连续子数组的最大和/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/29/算法/剑指offer/链表/合并两个排序的链表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -433,7 +1170,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/23/算法/数组/连续子数组的最大和/" itemprop="url">连续子数组的最大和</a></h1>
+                <a class="post-title-link" href="/2017/06/29/算法/剑指offer/链表/合并两个排序的链表/" itemprop="url">合并两个排序的列表</a></h1>
         
 
         <div class="post-meta">
@@ -445,8 +1182,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-23T16:56:34+08:00">
-                2017-06-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T14:12:11+08:00">
+                2017-06-29
               </time>
             
 
@@ -479,8 +1216,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/时间效率/" itemprop="url" rel="index">
-                    <span itemprop="name">时间效率</span>
+                  <a href="/categories/剑指offer/代码的鲁棒性/" itemprop="url" rel="index">
+                    <span itemprop="name">代码的鲁棒性</span>
                   </a>
                 </span>
 
@@ -516,9 +1253,10 @@
         
           
             <blockquote>
-<p>HZ偶尔会拿些专业问题来忽悠那些非计算机专业的同学。<br>今天测试组开完会后,他又发话了:在古老的一维模式识别中,<br>常常需要计算连续子向量的最大和,当向量全为正数的时候,<br>问题很好解决。但是,如果向量中包含负数,是否应该包含某个负数,<br>并期望旁边的正数会弥补它呢？例如:{6,-3,-2,7,-15,1,2,2},<br>连续子向量的最大和为8(从第0个开始,到第3个为止)。<br>你会不会被他忽悠住？(子向量的长度至少是1)</p>
+<p>输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">FindGreatestSumOfSubArray</span><span class="params">(<span class="keyword">int</span>[] array)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> max = array[<span class="number">0</span>];</div><div class="line">	<span class="keyword">int</span> sum = array[<span class="number">0</span>];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; array.length; i++) &#123;</div><div class="line">		sum = sum + array[i];</div><div class="line">		<span class="keyword">if</span> (sum &lt; <span class="number">0</span>) sum = <span class="number">0</span>;</div><div class="line">		max = Math.max(sum, max);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (max == <span class="number">0</span>) &#123;</div><div class="line">		Arrays.sort(array);</div><div class="line">		<span class="keyword">return</span> array[array.length - <span class="number">1</span>];</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> max;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListNode</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> val;</div><div class="line">	ListNode next = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">	ListNode(<span class="keyword">int</span> val) &#123;</div><div class="line">		<span class="keyword">this</span>.val = val;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">Merge</span><span class="params">(ListNode list1, ListNode list2)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (list1 == <span class="keyword">null</span>) &#123;</div><div class="line">		<span class="keyword">return</span> list2;</div><div class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (list2 == <span class="keyword">null</span>) &#123;</div><div class="line">		<span class="keyword">return</span> list1;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		ListNode head = list1.val &lt; list2.val ? list1 : list2;</div><div class="line">		ListNode cur1 = head == list1 ? list1 : list2;</div><div class="line">		ListNode cur2 = head == list1 ? list2 : list1;</div><div class="line">		ListNode pre = <span class="keyword">null</span>;</div><div class="line">		ListNode nx = <span class="keyword">null</span>;</div><div class="line">		<span class="keyword">while</span> (cur1 != <span class="keyword">null</span> &amp;&amp; cur2 != <span class="keyword">null</span>) &#123;</div><div class="line">			<span class="keyword">if</span> (cur1.val &lt;= cur2.val) &#123;</div><div class="line">				pre = cur1;</div><div class="line">				cur1 = cur1.next;</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				nx = cur2.next;</div><div class="line">				pre.next = cur2;</div><div class="line">				cur2.next = cur1;</div><div class="line">				pre = cur2;</div><div class="line">				cur2 = nx;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		pre.next = cur1 == <span class="keyword">null</span> ? cur2 : cur1;</div><div class="line">		<span class="keyword">return</span> head;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -562,7 +1300,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/23/算法/数组/最小的K个数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/29/算法/剑指offer/链表/两个链表的第一个公共结点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -581,7 +1319,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/23/算法/数组/最小的K个数/" itemprop="url">最小的K个数</a></h1>
+                <a class="post-title-link" href="/2017/06/29/算法/剑指offer/链表/两个链表的第一个公共结点/" itemprop="url">两个链表的第一个公共结点</a></h1>
         
 
         <div class="post-meta">
@@ -593,8 +1331,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-23T16:56:34+08:00">
-                2017-06-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T14:12:11+08:00">
+                2017-06-29
               </time>
             
 
@@ -627,8 +1365,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/时间效率/" itemprop="url" rel="index">
-                    <span itemprop="name">时间效率</span>
+                  <a href="/categories/剑指offer/时间空间效率的平衡/" itemprop="url" rel="index">
+                    <span itemprop="name">时间空间效率的平衡</span>
                   </a>
                 </span>
 
@@ -664,9 +1402,10 @@
         
           
             <blockquote>
-<p>输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4,。</p>
+<p>输入两个链表，找出它们的第一个公共结点。</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> ArrayList&lt;Integer&gt; <span class="title">GetLeastNumbers_Solution</span><span class="params">(<span class="keyword">int</span> [] a, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">      ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">Arrays.sort(a);</div><div class="line">      <span class="keyword">if</span>(k&gt;a.length)&#123;<span class="comment">//返回空List</span></div><div class="line">          <span class="keyword">return</span> list;</div><div class="line">      &#125;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;i++)&#123;</div><div class="line">	list.add(a[i]);</div><div class="line">&#125;</div><div class="line"><span class="keyword">return</span> list;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListNode</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> val;</div><div class="line">	ListNode next = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">	ListNode(<span class="keyword">int</span> val) &#123;</div><div class="line">		<span class="keyword">this</span>.val = val;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> ListNode <span class="title">FindFirstCommonNode</span><span class="params">(ListNode pHead1, ListNode pHead2)</span> </span>&#123;</div><div class="line">	Set&lt;ListNode&gt; set = <span class="keyword">new</span> HashSet&lt;ListNode&gt;();</div><div class="line">	ListNode p1 =pHead1;</div><div class="line">	ListNode p2 =pHead2;</div><div class="line">	<span class="keyword">while</span>(p1!=<span class="keyword">null</span>)&#123;</div><div class="line">		<span class="keyword">if</span>(!set.contains(p1))&#123;</div><div class="line">			set.add(p1);</div><div class="line">			p1= p1.next;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">while</span>(p2!=<span class="keyword">null</span>)&#123;</div><div class="line">		<span class="keyword">if</span>(set.contains(p2))&#123;</div><div class="line">			<span class="keyword">return</span> p2;</div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			p2=p2.next;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -710,7 +1449,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/23/算法/数组/数组中出现次数超过一半的数字/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/栈和队列/包含min函数的栈/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -729,7 +1468,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/23/算法/数组/数组中出现次数超过一半的数字/" itemprop="url">数组中出现次数超过一半的数字</a></h1>
+                <a class="post-title-link" href="/2017/06/26/算法/剑指offer/栈和队列/包含min函数的栈/" itemprop="url">包含min函数的栈</a></h1>
         
 
         <div class="post-meta">
@@ -741,8 +1480,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-23T16:56:34+08:00">
-                2017-06-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T17:31:30+08:00">
+                2017-06-26
               </time>
             
 
@@ -775,8 +1514,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/时间效率/" itemprop="url" rel="index">
-                    <span itemprop="name">时间效率</span>
+                  <a href="/categories/剑指offer/抽象具体化/" itemprop="url" rel="index">
+                    <span itemprop="name">抽象具体化</span>
                   </a>
                 </span>
 
@@ -812,9 +1551,9 @@
         
           
             <blockquote>
-<p>数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。<br>例如输入一个长度为9的数组{1,2,3,2,2,2,5,4,2}。由于数字2在数组中出现了5次，超过数组长度的一半，因此输出2。如果不存在则输出0。</p>
+<p>定义栈的数据结构，请在该类型中实现一个能够得到栈最小元素的min函数。</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">MoreThanHalfNum_Solution</span><span class="params">(<span class="keyword">int</span>[] array)</span> </span>&#123;</div><div class="line">	Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</div><div class="line">		<span class="keyword">if</span>(!map.containsKey(array[i]))&#123;</div><div class="line">			map.put(array[i], <span class="number">1</span>);</div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			<span class="keyword">int</span> v = map.get(array[i]);</div><div class="line">			v++;</div><div class="line">			map.put(array[i], v);</div><div class="line">			&#125;</div><div class="line">		<span class="keyword">if</span>(map.get(array[i])&gt;Math.floor(array.length/<span class="number">2.0</span>))&#123;</div><div class="line">			<span class="keyword">return</span> array[i];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">private</span> Stack&lt;Integer&gt; stackDate = <span class="keyword">new</span> Stack&lt;Integer&gt;();</div><div class="line">   <span class="keyword">private</span> Stack&lt;Integer&gt; stackMin = <span class="keyword">new</span> Stack&lt;Integer&gt;();</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> node)</span> </span>&#123;</div><div class="line">       stackDate.push(node);</div><div class="line">       <span class="keyword">if</span>(stackMin.isEmpty()||stackMin.peek()&gt;=node)&#123;</div><div class="line">           stackMin.push(node);</div><div class="line">       &#125;<span class="keyword">else</span>&#123;</div><div class="line">           stackMin.push(stackMin.peek());</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">     </div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</div><div class="line">       stackDate.pop();</div><div class="line">       stackMin.pop();</div><div class="line">   &#125;</div><div class="line">     </div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</div><div class="line">       <span class="keyword">return</span> stackDate.peek();</div><div class="line">   &#125;</div><div class="line">     </div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">min</span><span class="params">()</span> </span>&#123;</div><div class="line">       <span class="keyword">return</span> stackMin.peek();</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -858,7 +1597,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/23/算法/数组/二维数组中的查找/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/栈和队列/栈的压入、弹出序列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -877,7 +1616,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/23/算法/数组/二维数组中的查找/" itemprop="url">二维数组中的查找</a></h1>
+                <a class="post-title-link" href="/2017/06/26/算法/剑指offer/栈和队列/栈的压入、弹出序列/" itemprop="url">栈的压入和弹出序列</a></h1>
         
 
         <div class="post-meta">
@@ -889,8 +1628,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-23T16:56:34+08:00">
-                2017-06-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T17:31:30+08:00">
+                2017-06-26
               </time>
             
 
@@ -923,8 +1662,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/数组/" itemprop="url" rel="index">
-                    <span itemprop="name">数组</span>
+                  <a href="/categories/剑指offer/抽象具体化/" itemprop="url" rel="index">
+                    <span itemprop="name">抽象具体化</span>
                   </a>
                 </span>
 
@@ -960,293 +1699,9 @@
         
           
             <blockquote>
-<p>在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。<br>请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
+<p>输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。<br>假设压入栈的所有数字均不相等。<br>例如序列1,2,3,4,5是某栈的压入顺序，序列4，5,3,2,1是该压栈序列对应的一个弹出序列，<br>但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等 的）</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">Find</span><span class="params">(<span class="keyword">int</span> target, <span class="keyword">int</span>[][] array)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> n = array.length - <span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> m = array[<span class="number">0</span>].length - <span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = m; i &lt;= n &amp;&amp; j &gt;= <span class="number">0</span>;) &#123;</div><div class="line">		<span class="keyword">if</span> (array[i][j] == target) &#123;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (array[i][j] &gt; target) &#123;</div><div class="line">			j--;</div><div class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (array[i][j] &lt; target) &#123;</div><div class="line">			i++;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/23/算法/数组/整数中1出现的次数（从1到n整数中1出现的次数）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zz21y">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/23/算法/数组/整数中1出现的次数（从1到n整数中1出现的次数）/" itemprop="url">整数中1出现的次数（从1到n整数中1出现的次数）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-23T16:56:34+08:00">
-                2017-06-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/" itemprop="url" rel="index">
-                    <span itemprop="name">剑指offer</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/时间效率/" itemprop="url" rel="index">
-                    <span itemprop="name">时间效率</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>求出1~13的整数中1出现的次数,并算出100~1300的整数中1出现的次数？为此他特别数了一下1~13中包含1的数字有1、10、11、12、13因此共出现6次,但是对于后面问题他就没辙了。ACMer希望你们帮帮他,并把问题更加普遍化,可以很快的求出任意非负整数区间中1出现的次数。</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">NumberOf1Between1AndN_Solution</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line"> StringBuffer sb = <span class="keyword">new</span> StringBuffer();</div><div class="line"> <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++)&#123;</div><div class="line">	 sb.append(i);</div><div class="line"> &#125;</div><div class="line"> <span class="keyword">char</span>[] c = sb.toString().toCharArray();</div><div class="line"> <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line"> <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;c.length;i++)&#123;</div><div class="line">	 <span class="keyword">if</span>(c[i]==<span class="string">'1'</span>)&#123;</div><div class="line">		 count++;</div><div class="line">	 &#125;</div><div class="line"> &#125;</div><div class="line"> <span class="keyword">return</span> count;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/21/随笔/学海无涯回头是岸/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zz21y">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/21/随笔/学海无涯回头是岸/" itemprop="url">学海无涯,回头是岸</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-21T21:21:21+08:00">
-                2017-06-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>一个用于对自我知识进行碎片整理的博客。</p>
-</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">IsPopOrder</span><span class="params">(<span class="keyword">int</span>[] pushA, <span class="keyword">int</span>[] popA)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (pushA.length == <span class="number">0</span> || popA.length == <span class="number">0</span> || pushA.equals(<span class="keyword">null</span>) || popA.equals(<span class="keyword">null</span>)) &#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	&#125;</div><div class="line">	Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</div><div class="line">	<span class="keyword">int</span> j=<span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; pushA.length; i++) &#123;</div><div class="line">		stack.push(pushA[i]);</div><div class="line">		<span class="keyword">while</span> (j &lt; popA.length &amp;&amp; stack.peek() == popA[j]) &#123;</div><div class="line">			stack.pop();</div><div class="line">			j++;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> stack.empty();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -1285,7 +1740,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1330,7 +1785,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">78</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1341,7 +1796,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1352,7 +1807,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
