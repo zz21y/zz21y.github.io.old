@@ -266,7 +266,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/14/算法/笔试真题/京东/2017/幸运数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/14/算法/笔试真题/去哪儿网/2017/身份证分组/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -285,7 +285,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/14/算法/笔试真题/京东/2017/幸运数/" itemprop="url">幸运数</a></h1>
+                <a class="post-title-link" href="/2017/08/14/算法/笔试真题/去哪儿网/2017/身份证分组/" itemprop="url">身份证分组</a></h1>
         
 
         <div class="post-meta">
@@ -331,8 +331,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔试/京东/" itemprop="url" rel="index">
-                    <span itemprop="name">京东</span>
+                  <a href="/categories/笔试/去哪儿网/" itemprop="url" rel="index">
+                    <span itemprop="name">去哪儿网</span>
                   </a>
                 </span>
 
@@ -368,16 +368,22 @@
         
           
             <blockquote>
-<p>题目描述<br>小明同学学习了不同的进制之后，拿起了一些数字做起了游戏。小明同学知道，在日常生活中我们最常用的是十进制数，而在计算机中，二进制数也很常用。现在对于一个数字x，小明同学定义出了两个函数f(x)和g(x)。 f(x)表示把x这个数用十进制写出后各个数位上的数字之和。如f(123)=1+2+3=6。 g(x)表示把x这个数用二进制写出后各个数位上的数字之和。如123的二进制表示为1111011，那么，g(123)=1+1+1+1+0+1+1=6。 小明同学发现对于一些正整数x满足f(x)=g(x)，他把这种数称为幸运数，现在他想知道，小于等于n的幸运数有多少个？</p>
+<p>题目描述<br>18位身份证的编码规则是：<br>前1、2位数字表示：所在省（直辖市、自治区）的代码<br>第3、4位数字表示：所在地级市（自治州）的代码<br>第5、6位数字表示：所在区（县、自治县、县级市）的代码；<br>第7—14位数字表示：出生年、月、日；<br>第15、16位数字表示：所在地的派出所的代码；<br>第17位数字表示性别：奇数表示男性，偶数表示女性；<br>第18位数字是校检码，用来检验身份证的正确性。<br>用户在输入身份证的过程中经常会输入错误，为了方便用户正确输入需要在输入过程中对用户的输入按照 6+8+4 的格式进行分组，实现一个方法接收输入过程中的身份证号，返回分组后的字符</p>
 </blockquote>
-<p>输入描述:<br>每组数据输入一个数n(n&lt;=100000)</p>
-<p>输出描述:<br>每组数据输出一行，小于等于n的幸运数个数。</p>
+<p>输入描述:<br>输入数据有多行，每一行是一个输入过程中的身份证号</p>
+<p>输出描述:<br>分组后的字符串</p>
 <p>示例1</p>
 <p>输入</p>
-<pre><code>21
+<pre><code>5021
+502104 198803
+5021041988033084
+502104198803308324
 </code></pre><p>输出</p>
-<pre><code>3
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		<span class="keyword">int</span> n = sc.nextInt();</div><div class="line">		<span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</div><div class="line">			<span class="keyword">if</span> (getSum1(i) == getSum2(i)) &#123;</div><div class="line">				count++;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		System.out.println(count);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getSum2</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</div><div class="line">		<span class="keyword">char</span>[] c = String.valueOf(num).toCharArray();</div><div class="line">		<span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; c.length; i++) &#123;</div><div class="line">			sum += (<span class="keyword">int</span>) c[i] - <span class="string">'0'</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> sum;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getSum1</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</div><div class="line">		<span class="keyword">char</span>[] c = Integer.toBinaryString(num).toCharArray();</div><div class="line">		<span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; c.length; i++) &#123;</div><div class="line">			sum += (<span class="keyword">int</span>) c[i] - <span class="string">'0'</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> sum;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>5021
+502104 198803
+502104 19880330 84
+502104 19880330 8324
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">		</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		StringBuilder sb = <span class="keyword">new</span> StringBuilder();</div><div class="line">		<span class="keyword">while</span> (sc.hasNext()) &#123;</div><div class="line">			String s = sc.nextLine();</div><div class="line">			<span class="keyword">char</span>[] c = s.toCharArray();</div><div class="line">			<span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">			<span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line">			<span class="keyword">for</span> (; i &lt; c.length &amp;&amp; count &lt; <span class="number">6</span>; i++) &#123;</div><div class="line">				<span class="keyword">if</span> (c[i] != <span class="string">' '</span>) &#123;</div><div class="line">					sb.append(c[i]);</div><div class="line">					count++;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			sb.append(<span class="string">" "</span>);</div><div class="line">			count = <span class="number">0</span>;</div><div class="line">			<span class="keyword">for</span> (; i &lt; c.length &amp;&amp; count &lt; <span class="number">8</span>; i++) &#123;</div><div class="line">				<span class="keyword">if</span> (c[i] != <span class="string">' '</span>) &#123;</div><div class="line">					sb.append(c[i]);</div><div class="line">					count++;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			sb.append(<span class="string">" "</span>);</div><div class="line">			count = <span class="number">0</span>;</div><div class="line">			<span class="keyword">for</span> (; i &lt; c.length &amp;&amp; count &lt; <span class="number">4</span>; i++) &#123;</div><div class="line">				<span class="keyword">if</span> (c[i] != <span class="string">' '</span>) &#123;</div><div class="line">					sb.append(c[i]);</div><div class="line">					count++;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			System.out.println(sb.toString().trim());</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -1028,157 +1034,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/19/算法/程序员笔试面试金典/位运算/二进制插入/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zz21y">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/19/算法/程序员笔试面试金典/位运算/二进制插入/" itemprop="url">二进制插入</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-19T17:31:30+08:00">
-                2017-07-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/" itemprop="url" rel="index">
-                    <span itemprop="name">程序员面试金典</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/位运算/" itemprop="url" rel="index">
-                    <span itemprop="name">位运算</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>题目描述<br>有两个32位整数n和m，请编写算法将m的二进制数位插入到n的二进制的第j到第i位,<br>其中二进制的位数从低位数到高位且以0开始。<br>给定两个数int n和int m，同时给定int j和int i，意义如题所述，请返回操作后的数，<br>保证n的第j到第i位均为零，且m的二进制位数小于等于i-j+1。</p>
-</blockquote>
-<pre><code>测试样例：
-1024，19，2，6
-返回：1100
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinInsert</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">binInsert</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m, <span class="keyword">int</span> j, <span class="keyword">int</span> i)</span> </span>&#123;</div><div class="line">		m=m&lt;&lt;j;</div><div class="line">		<span class="keyword">return</span> n | m;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> ones = ~<span class="number">0</span>;<span class="comment">// 一连串1 等效 int ones=-1;</span></div><div class="line">		System.out.println(ones);<span class="comment">// -1</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/19/算法/程序员笔试面试金典/位运算/二进制表示浮点数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1329,7 +1184,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/19/算法/程序员笔试面试金典/动态规划/洪水/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/19/算法/程序员笔试面试金典/位运算/二进制插入/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -1348,7 +1203,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/19/算法/程序员笔试面试金典/动态规划/洪水/" itemprop="url">洪水</a></h1>
+                <a class="post-title-link" href="/2017/07/19/算法/程序员笔试面试金典/位运算/二进制插入/" itemprop="url">二进制插入</a></h1>
         
 
         <div class="post-meta">
@@ -1394,8 +1249,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/动态规划/" itemprop="url" rel="index">
-                    <span itemprop="name">动态规划</span>
+                  <a href="/categories/程序员面试金典/位运算/" itemprop="url" rel="index">
+                    <span itemprop="name">位运算</span>
                   </a>
                 </span>
 
@@ -1431,9 +1286,13 @@
         
           
             <blockquote>
-<p>题目描述<br>在一个nxm矩阵形状的城市里爆发了洪水，洪水从(0,0)的格子流到这个城市，在这个矩阵中有的格子有一些建筑，<br>洪水只能在没有建筑的格子流动。<br>请返回洪水流到(n - 1,m - 1)的最早时间(洪水只能从一个格子流到其相邻的格子且洪水单位时间能从一个格子流到相邻格子)。<br>给定一个矩阵map表示城市，其中map[i][j]表示坐标为(i,j)的格子，值为1代表该格子有建筑，0代表没有建筑。<br>同时给定矩阵的大小n和m(n和m均小于等于100)，请返回流到(n - 1,m - 1)的最早时间。保证洪水一定能流到终点。</p>
+<p>题目描述<br>有两个32位整数n和m，请编写算法将m的二进制数位插入到n的二进制的第j到第i位,<br>其中二进制的位数从低位数到高位且以0开始。<br>给定两个数int n和int m，同时给定int j和int i，意义如题所述，请返回操作后的数，<br>保证n的第j到第i位均为零，且m的二进制位数小于等于i-j+1。</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Flood</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">floodFill</span><span class="params">(<span class="keyword">int</span>[][] map, <span class="keyword">int</span> n, <span class="keyword">int</span> m)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> m + n - <span class="number">2</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>测试样例：
+1024，19，2，6
+返回：1100
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinInsert</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">binInsert</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m, <span class="keyword">int</span> j, <span class="keyword">int</span> i)</span> </span>&#123;</div><div class="line">		m=m&lt;&lt;j;</div><div class="line">		<span class="keyword">return</span> n | m;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> ones = ~<span class="number">0</span>;<span class="comment">// 一连串1 等效 int ones=-1;</span></div><div class="line">		System.out.println(ones);<span class="comment">// -1</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
           
         
       
@@ -1735,6 +1594,158 @@
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Subset</span> </span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> ArrayList&lt;ArrayList&lt;Integer&gt;&gt; getSubsets(<span class="keyword">int</span>[] A, <span class="keyword">int</span> n) &#123;</div><div class="line">		Arrays.sort(A);</div><div class="line">		ArrayList&lt;ArrayList&lt;Integer&gt;&gt; res = getSubsets2(A, n, n-<span class="number">1</span>);</div><div class="line">		res.remove(<span class="number">0</span>);</div><div class="line">		Collections.reverse(res);</div><div class="line">		<span class="keyword">return</span> res;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> ArrayList&lt;ArrayList&lt;Integer&gt;&gt; getSubsets2(<span class="keyword">int</span>[] A, <span class="keyword">int</span> n, <span class="keyword">int</span> index) &#123;</div><div class="line">		ArrayList&lt;ArrayList&lt;Integer&gt;&gt; res;</div><div class="line">		<span class="keyword">if</span> (index == -<span class="number">1</span>) &#123;</div><div class="line">			res = <span class="keyword">new</span> ArrayList&lt;ArrayList&lt;Integer&gt;&gt;();</div><div class="line">			res.add(<span class="keyword">new</span> ArrayList&lt;Integer&gt;());</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			res = getSubsets2(A, n, index -<span class="number">1</span>);</div><div class="line">			<span class="keyword">int</span> temp = A[index];</div><div class="line">			ArrayList&lt;ArrayList&lt;Integer&gt;&gt; list = <span class="keyword">new</span> ArrayList&lt;ArrayList&lt;Integer&gt;&gt;();</div><div class="line">			<span class="keyword">for</span> (ArrayList&lt;Integer&gt; l : res) &#123;</div><div class="line">				ArrayList&lt;Integer&gt; newlist = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">				newlist.addAll(l);</div><div class="line">				newlist.add(temp);</div><div class="line">				Collections.sort(newlist);</div><div class="line">				Collections.reverse(newlist);</div><div class="line">				list.add(newlist);</div><div class="line">			&#125;</div><div class="line">			res.addAll(list);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> res;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span>[] a = &#123; <span class="number">123</span>, <span class="number">456</span>, <span class="number">789</span> &#125;;</div><div class="line">		ArrayList&lt;ArrayList&lt;Integer&gt;&gt; list = getSubsets(a, a.length);</div><div class="line">		System.out.println(list.toString());</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/19/算法/程序员笔试面试金典/动态规划/硬币凑钱/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zz21y">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zz21y">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/19/算法/程序员笔试面试金典/动态规划/硬币凑钱/" itemprop="url">硬币凑钱</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-19T17:31:30+08:00">
+                2017-07-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程序员面试金典/" itemprop="url" rel="index">
+                    <span itemprop="name">程序员面试金典</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程序员面试金典/动态规划/" itemprop="url" rel="index">
+                    <span itemprop="name">动态规划</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>题目描述<br>有数量不限的硬币，币值为25分、10分、5分和1分，请编写代码计算n分有几种表示法。<br>给定一个int n，请返回n分有几种表示法。保证n小于等于100000，为了防止溢出，请将答案Mod 1000000007。</p>
+</blockquote>
+<pre><code>测试样例：
+6
+返回：2
+</code></pre><p>方法一：递归（效率低）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">makeChange</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> denom)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> next = <span class="number">0</span>;</div><div class="line">	<span class="keyword">switch</span> (denom) &#123;</div><div class="line">	<span class="keyword">case</span> <span class="number">25</span>:</div><div class="line">		next = <span class="number">10</span>;</div><div class="line">		<span class="keyword">break</span>;</div><div class="line">	<span class="keyword">case</span> <span class="number">10</span>:</div><div class="line">		next = <span class="number">5</span>;</div><div class="line">		<span class="keyword">break</span>;</div><div class="line">	<span class="keyword">case</span> <span class="number">5</span>:</div><div class="line">		next = <span class="number">1</span>;</div><div class="line">		<span class="keyword">break</span>;</div><div class="line">	<span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">		<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> ways = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i * denom &lt;= n; i++) &#123;</div><div class="line">		ways = ways % <span class="number">1000000007</span> + makeChange(n - i * denom, next) % <span class="number">1000000007</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ways;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>方法二：动态规划</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Coins</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">countWays</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span>[] coins = &#123; <span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">25</span> &#125;;</div><div class="line">		<span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">1</span>];</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; coins.length; i++) &#123;</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = coins[i]; j &lt;= n; j++) &#123;</div><div class="line">				dp[j] = (dp[j] + dp[j - coins[i]]) % <span class="number">1000000007</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> dp[n];</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
