@@ -266,7 +266,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/16/算法/程序员笔试面试金典/字符串/找出文中这两个单词的最短距离/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/23/算法/笔试真题/网易/2017/两种排序方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -285,7 +285,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/16/算法/程序员笔试面试金典/字符串/找出文中这两个单词的最短距离/" itemprop="url">找出文中这两个单词的最短距离</a></h1>
+                <a class="post-title-link" href="/2017/08/23/算法/笔试真题/网易/2017/两种排序方法/" itemprop="url">两种排序方法</a></h1>
         
 
         <div class="post-meta">
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-16T17:31:30+08:00">
-                2017-07-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-23T17:31:30+08:00">
+                2017-08-23
               </time>
             
 
@@ -320,8 +320,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/" itemprop="url" rel="index">
-                    <span itemprop="name">程序员面试金典</span>
+                  <a href="/categories/笔试/" itemprop="url" rel="index">
+                    <span itemprop="name">笔试</span>
                   </a>
                 </span>
 
@@ -331,8 +331,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/字符串/" itemprop="url" rel="index">
-                    <span itemprop="name">字符串</span>
+                  <a href="/categories/笔试/网易/" itemprop="url" rel="index">
+                    <span itemprop="name">网易</span>
                   </a>
                 </span>
 
@@ -368,9 +368,19 @@
         
           
             <blockquote>
-<p>题目描述<br>有一篇文章内含多个单词，现给定两个单词，请设计一个高效算法，<br>找出文中这两个单词的最短距离(即最少相隔的单词数,也就是两个单词在文章中位置的差的绝对值)。<br>给定一个string数组article，代表所给文章，同时给定文章的单词数n和待查找的两个单词x和y。<br>请返回两个单词的最短距离。保证两个单词均在文中出现且不相同，同时保证文章单词数小于等于1000。</p>
+<p>题目描述<br>考拉有n个字符串字符串，任意两个字符串长度都是不同的。考拉最近学习到有两种字符串的排序方法： 1.根据字符串的字典序排序。例如：<br>“car” &lt; “carriage” &lt; “cats” &lt; “doggies &lt; “koala”<br>2.根据字符串的长度排序。例如：<br>“car” &lt; “cats” &lt; “koala” &lt; “doggies” &lt; “carriage”<br>考拉想知道自己的这些字符串排列顺序是否满足这两种排序方法，考拉要忙着吃树叶，所以需要你来帮忙验证。</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Distance</span> </span>&#123;</div><div class="line">	<span class="comment">// 方法一：</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getDistance</span><span class="params">(String[] article, <span class="keyword">int</span> n, String x, String y)</span> </span>&#123;</div><div class="line">		ArrayList&lt;Integer&gt; list1 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">		ArrayList&lt;Integer&gt; list2 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">			<span class="keyword">if</span> (article[i].equals(x)) &#123;</div><div class="line">				list1.add(i);</div><div class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (article[i].equals(y)) &#123;</div><div class="line">				list2.add(i);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">int</span> min = Integer.MAX_VALUE;</div><div class="line">		<span class="keyword">for</span> (Integer i : list1) &#123;</div><div class="line">			<span class="keyword">for</span> (Integer j : list2) &#123;</div><div class="line">				min = Math.min(min, Math.abs(i - j));</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> min;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">// 方法二：更快</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getDistance2</span><span class="params">(String[] article, <span class="keyword">int</span> n, String x, String y)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> l = -<span class="number">1</span>;</div><div class="line">		<span class="keyword">int</span> r = -<span class="number">1</span>;</div><div class="line">		<span class="keyword">int</span> min = Integer.MAX_VALUE;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">			<span class="keyword">if</span> (article[i].equals(x)) &#123;</div><div class="line">				r = i;</div><div class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (article[i].equals(y)) &#123;</div><div class="line">				l = i;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">if</span>(l!=-<span class="number">1</span>&amp;&amp;i!=-<span class="number">1</span>)&#123;</div><div class="line">				min=Math.min(min, Math.abs(l-r));</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> min;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>输入描述:<br>输入第一行为字符串个数n(n ≤ 100)<br>接下来的n行,每行一个字符串,字符串长度均小于100，均由小写字母组成</p>
+<p>输出描述:<br>如果这些字符串是根据字典序排列而不是根据长度排列输出”lexicographically”,<br>如果根据长度排列而不是字典序排列输出”lengths”,<br>如果两种方式都符合输出”both”，否则输出”none”</p>
+<p>示例1</p>
+<p>输入</p>
+<pre><code>3
+a
+aa
+bbb
+</code></pre><p>输出</p>
+<pre><code>both
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		<span class="keyword">int</span> n = sc.nextInt();</div><div class="line">		String[] s = <span class="keyword">new</span> String[n];</div><div class="line">		<span class="keyword">int</span>[] len = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">		TreeSet&lt;String&gt; set = <span class="keyword">new</span> TreeSet&lt;String&gt;();</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">			s[i] = sc.next();</div><div class="line">			len[i] = s[i].length();</div><div class="line">			set.add(s[i]);</div><div class="line">		&#125;</div><div class="line">		set.comparator();</div><div class="line">		<span class="keyword">boolean</span> lengths = isLengths(len);</div><div class="line">		<span class="keyword">boolean</span> lexicographically = isLexicographically(Arrays.toString(s), set.toString());</div><div class="line">		<span class="keyword">if</span> (lengths &amp;&amp; lexicographically) &#123;</div><div class="line">			System.out.println(<span class="string">"both"</span>);</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (lengths == <span class="keyword">true</span> &amp;&amp; lexicographically == <span class="keyword">false</span>) &#123;</div><div class="line">			System.out.println(<span class="string">"lengths"</span>);</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (lengths == <span class="keyword">false</span> &amp;&amp; lexicographically == <span class="keyword">true</span>) &#123;</div><div class="line">			System.out.println(<span class="string">"lexicographically"</span>);</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">		System.out.println(<span class="string">"none"</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isLexicographically</span><span class="params">(String s1, String s2)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> s1.equals(s2);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isLengths</span><span class="params">(<span class="keyword">int</span>[] a)</span> </span>&#123;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length - <span class="number">1</span>; i++) &#123;</div><div class="line">			<span class="keyword">if</span> (a[i] &gt; a[i + <span class="number">1</span>]) &#123;</div><div class="line">				<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -414,7 +424,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/16/算法/程序员笔试面试金典/字符串/检查一个单词是否为其他字符串的子串/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/23/算法/笔试真题/网易/2017/构造队列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -433,7 +443,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/16/算法/程序员笔试面试金典/字符串/检查一个单词是否为其他字符串的子串/" itemprop="url">检查一个单词是否为其他字符串的子串</a></h1>
+                <a class="post-title-link" href="/2017/08/23/算法/笔试真题/网易/2017/构造队列/" itemprop="url">构造队列</a></h1>
         
 
         <div class="post-meta">
@@ -445,8 +455,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-16T17:31:30+08:00">
-                2017-07-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-23T17:31:30+08:00">
+                2017-08-23
               </time>
             
 
@@ -468,8 +478,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/" itemprop="url" rel="index">
-                    <span itemprop="name">程序员面试金典</span>
+                  <a href="/categories/笔试/" itemprop="url" rel="index">
+                    <span itemprop="name">笔试</span>
                   </a>
                 </span>
 
@@ -479,8 +489,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/字符串/" itemprop="url" rel="index">
-                    <span itemprop="name">字符串</span>
+                  <a href="/categories/笔试/网易/" itemprop="url" rel="index">
+                    <span itemprop="name">网易</span>
                   </a>
                 </span>
 
@@ -516,14 +526,37 @@
         
           
             <blockquote>
-<p>题目描述<br>假定我们都知道非常高效的算法来检查一个单词是否为其他字符串的子串。请将这个算法编写成一个函数，<br>给定两个字符串s1和s2，请编写代码检查s2是否为s1旋转而成，要求只能调用一次检查子串的函数。<br>给定两个字符串s1,s2,请返回bool值代表s2是否由s1旋转而成。字符串中字符为英文字母和空格，<br>区分大小写，字符串长度小于等于1000。</p>
+<p>题目描述<br>小明同学把1到n这n个数字按照一定的顺序放入了一个队列Q中。现在他对队列Q执行了如下程序：<br>while(!Q.empty())              //队列不空，执行循环</p>
 </blockquote>
-<pre><code>测试样例：
-&quot;Hello world&quot;,&quot;worldhello &quot;
-返回：false
-&quot;waterbottle&quot;,&quot;erbottlewat&quot;
-返回：true
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReverseEqual</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">checkReverseEqual</span><span class="params">(String s1, String s2)</span> </span>&#123;</div><div class="line">		String s = s1 + s1;</div><div class="line">		<span class="keyword">return</span> s.contains(s2);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>{</p>
+<pre><code>int x=Q.front();            //取出当前队头的值x
+
+Q.pop();                 //弹出当前队头
+
+Q.push(x);               //把x放入队尾
+
+x = Q.front();              //取出这时候队头的值
+
+printf(&quot;%d\n&quot;,x);          //输出x
+
+Q.pop();                 //弹出这时候的队头
+</code></pre><p>}</p>
+<p>做取出队头的值操作的时候，并不弹出当前队头。<br>小明同学发现，这段程序恰好按顺序输出了1,2,3,…,n。现在小明想让你构造出原始的队列，你能做到吗？</p>
+<p>输入描述:<br>第一行一个整数T（T ≤ 100）表示数据组数，每组数据输入一个数n（1 ≤ n ≤ 100000），输入的所有n之和不超过200000。</p>
+<p>输出描述:<br>对于每组数据，输出一行，表示原始的队列。数字之间用一个空格隔开，不要在行末输出多余的空格.</p>
+<p>示例1</p>
+<p>输入</p>
+<pre><code>4
+1
+2
+3
+10
+</code></pre><p>输出</p>
+<pre><code>1
+2 1
+2 1 3
+8 1 6 2 10 3 7 4 9 5
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Num</span> <span class="keyword">implements</span> <span class="title">Comparator</span>&lt;<span class="title">Num</span>&gt; </span>&#123;</div><div class="line">	<span class="keyword">int</span> index;</div><div class="line">	<span class="keyword">int</span> val;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Num</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">int</span> val)</span> </span>&#123;</div><div class="line">		<span class="keyword">super</span>();</div><div class="line">		<span class="keyword">this</span>.index = index;</div><div class="line">		<span class="keyword">this</span>.val = val;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Num</span><span class="params">()</span> </span>&#123;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Num o1, Num o2)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> o1.index &gt; o2.index ? <span class="number">1</span> : -<span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">"Num [index="</span> + index + <span class="string">", val="</span> + val + <span class="string">"]"</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		<span class="keyword">int</span> n = sc.nextInt();</div><div class="line">		<span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length; i++) &#123;</div><div class="line">			a[i] = sc.nextInt();</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length; i++) &#123;</div><div class="line">			Queue&lt;Num&gt; queue = <span class="keyword">new</span> LinkedList&lt;Num&gt;();</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; a[i]; j++) &#123;</div><div class="line">				Num num = <span class="keyword">new</span> Num(j + <span class="number">1</span>, <span class="number">0</span>);</div><div class="line">				queue.add(num);</div><div class="line">			&#125;</div><div class="line">			myQueue(queue);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">myQueue</span><span class="params">(Queue&lt;Num&gt; queue)</span> </span>&#123;</div><div class="line">		ArrayList&lt;Num&gt; list = <span class="keyword">new</span> ArrayList&lt;Num&gt;();</div><div class="line">		<span class="keyword">while</span> (!queue.isEmpty()) &#123;</div><div class="line">			Num n = queue.poll();</div><div class="line">			queue.add(n);</div><div class="line">			list.add(queue.poll());</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); i++) &#123;</div><div class="line">			list.get(i).val = i + <span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">		Collections.sort(list, <span class="keyword">new</span> Num());</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); i++) &#123;</div><div class="line">			<span class="comment">// System.out.println(list.get(i).toString());</span></div><div class="line">			<span class="keyword">if</span> (i != list.size() - <span class="number">1</span>) &#123;</div><div class="line">				System.out.print(list.get(i).val + <span class="string">" "</span>);</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				System.out.println(list.get(i).val);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -567,7 +600,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/16/算法/程序员笔试面试金典/字符串/最长的单词/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/23/算法/笔试真题/网易/2017/最大的奇约数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -586,7 +619,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/16/算法/程序员笔试面试金典/字符串/最长的单词/" itemprop="url">最长的单词</a></h1>
+                <a class="post-title-link" href="/2017/08/23/算法/笔试真题/网易/2017/最大的奇约数/" itemprop="url">最大的奇约数</a></h1>
         
 
         <div class="post-meta">
@@ -598,8 +631,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-16T17:31:30+08:00">
-                2017-07-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-23T17:31:30+08:00">
+                2017-08-23
               </time>
             
 
@@ -621,8 +654,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/" itemprop="url" rel="index">
-                    <span itemprop="name">程序员面试金典</span>
+                  <a href="/categories/笔试/" itemprop="url" rel="index">
+                    <span itemprop="name">笔试</span>
                   </a>
                 </span>
 
@@ -632,8 +665,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/字符串/" itemprop="url" rel="index">
-                    <span itemprop="name">字符串</span>
+                  <a href="/categories/笔试/网易/" itemprop="url" rel="index">
+                    <span itemprop="name">网易</span>
                   </a>
                 </span>
 
@@ -669,12 +702,16 @@
         
           
             <blockquote>
-<p>题目描述<br>有一组单词，请编写一个程序，在数组中找出由数组中字符串组成的最长的串A，即A是由其它单词组成的(可重复)最长的单词。<br>给定一个string数组str，同时给定数组的大小n。请返回最长单词的长度，保证题意所述的最长单词存在。</p>
+<p>题目描述<br>小易是一个数论爱好者，并且对于一个数的奇数约数十分感兴趣。一天小易遇到这样一个问题： 定义函数f(x)为x最大的奇数约数，x为正整数。 例如:f(44) = 11.<br>现在给出一个N，需要求出 f(1) + f(2) + f(3)…….f(N)<br>例如： N = 7<br>f(1) + f(2) + f(3) + f(4) + f(5) + f(6) + f(7) = 1 + 1 + 3 + 1 + 5 + 3 + 7 = 21<br>小易计算这个问题遇到了困难，需要你来设计一个算法帮助他。</p>
 </blockquote>
-<pre><code>测试样例：
-[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;ab&quot;,&quot;bc&quot;,&quot;abc&quot;],6
-返回：3
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LongestString</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getLongest</span><span class="params">(String[] str, <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">		System.out.println(Arrays.toString(str));</div><div class="line">		<span class="comment">//按字符串长度降序排列</span></div><div class="line">		Arrays.sort(str, <span class="keyword">new</span> Comparator&lt;String&gt;() &#123;</div><div class="line">			<span class="meta">@Override</span></div><div class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(String o1, String o2)</span> </span>&#123;</div><div class="line">				<span class="keyword">return</span> o1.length() &gt; o2.length() ? -<span class="number">1</span> : <span class="number">1</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">		System.out.println(Arrays.toString(str));</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">			<span class="comment">//控制循环:不满足“由其它单词组成”这个条件，则为false</span></div><div class="line">			<span class="keyword">boolean</span> Contains = <span class="keyword">true</span>;</div><div class="line">			<span class="comment">//构建字典</span></div><div class="line">			HashSet&lt;Character&gt; set = <span class="keyword">new</span> HashSet&lt;Character&gt;();</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</div><div class="line">				<span class="keyword">if</span> (!str[i].equals(str[j])) &#123;</div><div class="line">					<span class="keyword">char</span>[] temp = str[j].toCharArray();</div><div class="line">					<span class="keyword">for</span> (Character t : temp) &#123;</div><div class="line">						set.add(t);</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">char</span>[] c = str[i].toCharArray();</div><div class="line">			<span class="comment">//判断是否包含</span></div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; c.length; j++) &#123;</div><div class="line">				<span class="keyword">if</span> (!set.contains(c[j])) &#123;</div><div class="line">					Contains = <span class="keyword">false</span>;</div><div class="line">					<span class="keyword">break</span>;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">if</span> (Contains) &#123;</div><div class="line">				<span class="keyword">return</span> str[i].length();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="comment">// "glhz","ddthddth","ddth","z","glh"</span></div><div class="line">		<span class="comment">// "glhz","ddthddth","ddth","z","glh"]</span></div><div class="line">		<span class="comment">// "rb", "erb", "rbe", "e", "g", "mcxr"</span></div><div class="line">			<span class="comment">//"rb","erb","rbe","e","g","mcxr"</span></div><div class="line">		String[] s = &#123; <span class="string">"rb"</span>,<span class="string">"erb"</span>,<span class="string">"rbe"</span>,<span class="string">"e"</span>,<span class="string">"g"</span>,<span class="string">"mcxr"</span> &#125;;</div><div class="line">		System.out.println(getLongest(s, s.length));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>输入描述:<br>输入一个整数N (1 ≤ N ≤ 1000000000)</p>
+<p>输出描述:<br>输出一个整数，即为f(1) + f(2) + f(3)…….f(N)</p>
+<p>示例1</p>
+<p>输入</p>
+<pre><code>7
+</code></pre><p>输出</p>
+<pre><code>21
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		<span class="keyword">long</span> num = sc.nextLong();</div><div class="line">      	<span class="keyword">long</span> sum = <span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span>(num &gt; <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">if</span>(num % <span class="number">2</span> == <span class="number">0</span>) &#123;</div><div class="line">                sum += num * num / <span class="number">4</span>;</div><div class="line">                num /= <span class="number">2</span>;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                sum += num;</div><div class="line">                num--;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">		System.out.println(sum);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -718,7 +755,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/16/算法/程序员笔试面试金典/字符串/翻转字符串/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/23/算法/笔试真题/网易/2017/数字翻转/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -737,7 +774,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/16/算法/程序员笔试面试金典/字符串/翻转字符串/" itemprop="url">翻转字符串</a></h1>
+                <a class="post-title-link" href="/2017/08/23/算法/笔试真题/网易/2017/数字翻转/" itemprop="url">数字翻转</a></h1>
         
 
         <div class="post-meta">
@@ -749,8 +786,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-16T17:31:30+08:00">
-                2017-07-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-23T17:31:30+08:00">
+                2017-08-23
               </time>
             
 
@@ -772,8 +809,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/" itemprop="url" rel="index">
-                    <span itemprop="name">程序员面试金典</span>
+                  <a href="/categories/笔试/" itemprop="url" rel="index">
+                    <span itemprop="name">笔试</span>
                   </a>
                 </span>
 
@@ -783,8 +820,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/字符串/" itemprop="url" rel="index">
-                    <span itemprop="name">字符串</span>
+                  <a href="/categories/笔试/网易/" itemprop="url" rel="index">
+                    <span itemprop="name">网易</span>
                   </a>
                 </span>
 
@@ -820,12 +857,16 @@
         
           
             <blockquote>
-<p>请实现一个算法，在不使用额外数据结构和储存空间的情况下，翻转一个给定的字符串(可以使用单个过程变量)。<br>给定一个string iniString，请返回一个string，为翻转后的字符串。保证字符串的长度小于等于5000。</p>
+<p>题目描述<br>对于一个整数X，定义操作rev(X)为将X按数位翻转过来，并且去除掉前导0。例如:<br>如果 X = 123，则rev(X) = 321;<br>如果 X = 100，则rev(X) = 1.<br>现在给出整数x和y,要求rev(rev(x) + rev(y))为多少？</p>
 </blockquote>
-<pre><code>测试样例：
-&quot;This is nowcoder&quot;
-返回：&quot;redocwon si sihT&quot;
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Reverse</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">reverseString</span><span class="params">(String iniString)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">new</span> StringBuffer(iniString).reverse().toString();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>输入描述:<br>输入为一行，x、y(1 ≤ x、y ≤ 1000)，以空格隔开。</p>
+<p>输出描述:<br>输出rev(rev(x) + rev(y))的值</p>
+<p>示例1</p>
+<p>输入</p>
+<pre><code>123 100
+</code></pre><p>输出</p>
+<pre><code>223
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		<span class="keyword">int</span> a = sc.nextInt();</div><div class="line">		<span class="keyword">int</span> b = sc.nextInt();</div><div class="line">		System.out.println(rev(rev(a) + rev(b)));</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">rev</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">		<span class="keyword">char</span>[] c = String.valueOf(n).toCharArray();</div><div class="line">		<span class="keyword">char</span>[] res = <span class="keyword">new</span> <span class="keyword">char</span>[c.length];</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; c.length; i++) &#123;</div><div class="line">			res[i] = c[c.length - <span class="number">1</span> - i];</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> Integer.parseInt(String.valueOf(res));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -869,7 +910,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/16/算法/程序员笔试面试金典/字符串/字符串是否全部不同/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/23/算法/笔试真题/搜狐/2017/彩色宝石/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -888,7 +929,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/16/算法/程序员笔试面试金典/字符串/字符串是否全部不同/" itemprop="url">字符串是否全部不同</a></h1>
+                <a class="post-title-link" href="/2017/08/23/算法/笔试真题/搜狐/2017/彩色宝石/" itemprop="url">彩色宝石项链</a></h1>
         
 
         <div class="post-meta">
@@ -900,8 +941,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-16T17:31:30+08:00">
-                2017-07-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-23T17:31:30+08:00">
+                2017-08-23
               </time>
             
 
@@ -923,8 +964,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/" itemprop="url" rel="index">
-                    <span itemprop="name">程序员面试金典</span>
+                  <a href="/categories/笔试/" itemprop="url" rel="index">
+                    <span itemprop="name">笔试</span>
                   </a>
                 </span>
 
@@ -934,8 +975,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/字符串/" itemprop="url" rel="index">
-                    <span itemprop="name">字符串</span>
+                  <a href="/categories/笔试/搜狐/" itemprop="url" rel="index">
+                    <span itemprop="name">搜狐</span>
                   </a>
                 </span>
 
@@ -971,14 +1012,18 @@
         
           
             <blockquote>
-<p>题目描述<br>请实现一个算法，确定一个字符串的所有字符是否全都不同。这里我们要求不允许使用额外的存储结构。<br>给定一个string iniString，请返回一个bool值,True代表所有字符全都不同，False代表存在相同的字符。<br>保证字符串中的字符为ASCII字符。字符串的长度小于等于3000。</p>
+<p>题目描述<br>有一条彩色宝石项链，是由很多种不同的宝石组成的，包括红宝石，蓝宝石，钻石，翡翠，珍珠等。有一天国王把项链赏赐给了一个学者，并跟他说，你可以带走这条项链，但是王后很喜欢红宝石，蓝宝石，紫水晶，翡翠和钻石这五种，我要你从项链中截取连续的一小段还给我，这一段中必须包含所有的这五种宝石，剩下的部分你可以带走。如果无法找到则一个也无法带走。请帮助学者找出如何切分项链才能够拿到最多的宝石。</p>
 </blockquote>
-<pre><code>测试样例：
-&quot;aeiou&quot;
-返回：True
-&quot;BarackObama&quot;
-返回：False
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Different</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">checkDifferent</span><span class="params">(String iniString)</span> </span>&#123;</div><div class="line">		<span class="keyword">char</span>[] c = iniString.toCharArray();</div><div class="line">		HashSet&lt;Character&gt; set = <span class="keyword">new</span> HashSet&lt;Character&gt;();</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; c.length; i++) &#123;</div><div class="line">			<span class="keyword">if</span> (set.contains(c[i])) &#123;</div><div class="line">				<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				set.add(c[i]);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>输入描述:<br>我们用每种字符代表一种宝石，A表示红宝石，B表示蓝宝石，C代表紫水晶，D代表翡翠，E代表钻石，F代表玉石，G代表玻璃等等，我们用一个全部为大写字母的字符序列表示项链的宝石序列，注意项链是首尾相接的。每行代表一种情况。</p>
+<p>输出描述:<br>输出学者能够拿到的最多的宝石数量。每行一个</p>
+<p>示例1</p>
+<p>输入</p>
+<pre><code>ABCYDYE
+ATTMBQECPD
+</code></pre><p>输出</p>
+<pre><code>1
+3
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Necklace</span> </span>&#123;</div><div class="line">	<span class="keyword">boolean</span> A;</div><div class="line">	<span class="keyword">boolean</span> B;</div><div class="line">	<span class="keyword">boolean</span> C;</div><div class="line">	<span class="keyword">boolean</span> D;</div><div class="line">	<span class="keyword">boolean</span> E;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isFinish</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> A &amp;&amp; B &amp;&amp; C &amp;&amp; D &amp;&amp; E;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setElement</span><span class="params">(<span class="keyword">char</span> c)</span> </span>&#123;</div><div class="line">		<span class="keyword">switch</span> (c) &#123;</div><div class="line">		<span class="keyword">case</span> <span class="string">'A'</span>:</div><div class="line">			A = <span class="keyword">true</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="string">'B'</span>:</div><div class="line">			B = <span class="keyword">true</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="string">'C'</span>:</div><div class="line">			C = <span class="keyword">true</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="string">'D'</span>:</div><div class="line">			D = <span class="keyword">true</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="string">'E'</span>:</div><div class="line">			E = <span class="keyword">true</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		String s = sc.nextLine();</div><div class="line">		<span class="keyword">int</span> len = s.length();</div><div class="line">		s = s + s;</div><div class="line">		<span class="keyword">int</span> len2 = s.length();</div><div class="line">		<span class="keyword">int</span> min = len;</div><div class="line">		<span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</div><div class="line">			count = <span class="number">0</span>;</div><div class="line">			<span class="keyword">int</span> j = i;</div><div class="line">			Necklace necklace = <span class="keyword">new</span> Necklace();</div><div class="line">			<span class="keyword">while</span> (!necklace.isFinish() &amp;&amp; j &lt; len2) &#123;</div><div class="line">				<span class="comment">// System.out.println(s.charAt(j));</span></div><div class="line">				necklace.setElement(s.charAt(j));</div><div class="line">				<span class="comment">// System.out.println(necklace.isFinish());</span></div><div class="line">				count++;</div><div class="line">				j++;</div><div class="line">			&#125;</div><div class="line">			min = Math.min(min, count);</div><div class="line">		&#125;</div><div class="line">		System.out.println(min &gt; len ? <span class="number">0</span> : len - min);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -1022,7 +1067,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/16/算法/程序员笔试面试金典/字符串/判断子串/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/23/算法/笔试真题/网易/2017/优雅的点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -1041,7 +1086,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/16/算法/程序员笔试面试金典/字符串/判断子串/" itemprop="url">判断子串</a></h1>
+                <a class="post-title-link" href="/2017/08/23/算法/笔试真题/网易/2017/优雅的点/" itemprop="url">优雅的点</a></h1>
         
 
         <div class="post-meta">
@@ -1053,8 +1098,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-16T17:31:30+08:00">
-                2017-07-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-23T17:31:30+08:00">
+                2017-08-23
               </time>
             
 
@@ -1076,8 +1121,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/" itemprop="url" rel="index">
-                    <span itemprop="name">程序员面试金典</span>
+                  <a href="/categories/笔试/" itemprop="url" rel="index">
+                    <span itemprop="name">笔试</span>
                   </a>
                 </span>
 
@@ -1087,8 +1132,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/字符串/" itemprop="url" rel="index">
-                    <span itemprop="name">字符串</span>
+                  <a href="/categories/笔试/网易/" itemprop="url" rel="index">
+                    <span itemprop="name">网易</span>
                   </a>
                 </span>
 
@@ -1124,12 +1169,16 @@
         
           
             <blockquote>
-<p>题目描述<br>现有一个小写英文字母组成的字符串s和一个包含较短小写英文字符串的数组p，请设计一个高效算法，<br>对于p中的每一个较短字符串，判断其是否为s的子串。<br>给定一个string数组p和它的大小n，同时给定string s，为母串，请返回一个bool数组，每个元素代表p中的对应字符串是否为s的子串。<br>保证p中的串长度小于等于8，且p中的串的个数小于等于500，同时保证s的长度小于等于1000。</p>
+<p>题目描述<br>小易有一个圆心在坐标原点的圆，小易知道圆的半径的平方。小易认为在圆上的点而且横纵坐标都是整数的点是优雅的，小易现在想寻找一个算法计算出优雅的点的个数，请你来帮帮他。<br>例如：半径的平方如果为25<br>优雅的点就有：(+/-3, +/-4), (+/-4, +/-3), (0, +/-5) (+/-5, 0)，一共12个点。</p>
 </blockquote>
-<pre><code>测试样例：
-[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;],4,&quot;abc&quot;
-返回：[true,true,true,false]
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Substr</span> </span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">boolean</span>[] chkSubStr(String[] p, <span class="keyword">int</span> n, String s) &#123;</div><div class="line">    	<span class="keyword">boolean</span>[]  res = <span class="keyword">new</span> <span class="keyword">boolean</span>[n];</div><div class="line">    	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</div><div class="line">    		<span class="keyword">if</span>(s.length()!=p[i].length())&#123;</div><div class="line">    			res[i]=<span class="keyword">false</span>;</div><div class="line">    		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(!s.contains((p[i])))&#123;</div><div class="line">    			res[i]=<span class="keyword">false</span>;</div><div class="line">    		&#125;<span class="keyword">else</span>&#123;</div><div class="line">    			res[i]=<span class="keyword">true</span>;</div><div class="line">    		&#125;</div><div class="line">    	&#125;</div><div class="line">    	<span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>输入描述:<br>输入为一个整数，即为圆半径的平方,范围在32位int范围内。</p>
+<p>输出描述:<br>输出为一个整数，即为优雅的点的个数</p>
+<p>示例1</p>
+<p>输入</p>
+<pre><code>25
+</code></pre><p>输出</p>
+<pre><code>12
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		<span class="keyword">double</span> num = sc.nextInt();</div><div class="line">		<span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">		<span class="keyword">int</span> range = (<span class="keyword">int</span>) Math.sqrt(num);</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= range; i++) &#123;</div><div class="line">			<span class="keyword">int</span> remain = (<span class="keyword">int</span>) Math.sqrt(num - i * i);</div><div class="line">			<span class="keyword">if</span> (remain * remain == num - i * i) &#123;</div><div class="line"></div><div class="line">				<span class="keyword">if</span> (i == <span class="number">0</span>)</div><div class="line">					count = count + <span class="number">2</span>;</div><div class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (i * i == num)</div><div class="line">					count = count + <span class="number">2</span>;</div><div class="line">				<span class="keyword">else</span></div><div class="line">					count = count + <span class="number">4</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		System.out.println(count);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -1173,7 +1222,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/16/算法/程序员笔试面试金典/字符串/字符串压缩/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/23/算法/笔试真题/网易/2017/跳石板/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -1192,7 +1241,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/16/算法/程序员笔试面试金典/字符串/字符串压缩/" itemprop="url">字符串压缩</a></h1>
+                <a class="post-title-link" href="/2017/08/23/算法/笔试真题/网易/2017/跳石板/" itemprop="url">跳石板</a></h1>
         
 
         <div class="post-meta">
@@ -1204,8 +1253,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-16T17:31:30+08:00">
-                2017-07-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-23T17:31:30+08:00">
+                2017-08-23
               </time>
             
 
@@ -1227,8 +1276,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/" itemprop="url" rel="index">
-                    <span itemprop="name">程序员面试金典</span>
+                  <a href="/categories/笔试/" itemprop="url" rel="index">
+                    <span itemprop="name">笔试</span>
                   </a>
                 </span>
 
@@ -1238,8 +1287,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/字符串/" itemprop="url" rel="index">
-                    <span itemprop="name">字符串</span>
+                  <a href="/categories/笔试/网易/" itemprop="url" rel="index">
+                    <span itemprop="name">网易</span>
                   </a>
                 </span>
 
@@ -1275,14 +1324,14 @@
         
           
             <blockquote>
-<p>题目描述<br>利用字符重复出现的次数，编写一个方法，实现基本的字符串压缩功能。<br>比如，字符串“aabcccccaaa”经压缩会变成“a2b1c5a3”。若压缩后的字符串没有变短，则返回原先的字符串。<br>给定一个string iniString为待压缩的串(长度小于等于10000)，<br>保证串内字符均由大小写英文字母组成，返回一个string，为所求的压缩后或未变化的串。</p>
+<p>题目描述<br>小易来到了一条石板路前，每块石板上从1挨着编号为：1、2、3…….<br>这条石板路要根据特殊的规则才能前进：对于小易当前所在的编号为K的 石板，小易单次只能往前跳K的一个约数(不含1和K)步，即跳到K+X(X为K的一个非1和本身的约数)的位置。 小易当前处在编号为N的石板，他想跳到编号恰好为M的石板去，小易想知道最少需要跳跃几次可以到达。<br>例如：<br>N = 4，M = 24：<br>4-&gt;6-&gt;8-&gt;12-&gt;18-&gt;24<br>于是小易最少需要跳跃5次，就可以从4号石板跳到24号石板</p>
 </blockquote>
-<pre><code>测试样例
-&quot;aabcccccaaa&quot;
-返回：&quot;a2b1c5a3&quot;
-&quot;welcometonowcoderrrrr&quot;
-返回：&quot;welcometonowcoderrrrr&quot;
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Zipper</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">zipString</span><span class="params">(String iniString)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span> (iniString.isEmpty() || iniString == <span class="keyword">null</span>) &#123;</div><div class="line">			<span class="keyword">return</span> iniString;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">char</span>[] c = iniString.toCharArray();</div><div class="line">		StringBuffer sb = <span class="keyword">new</span> StringBuffer();</div><div class="line">		<span class="keyword">int</span> lindex = <span class="number">0</span>;</div><div class="line">		<span class="keyword">int</span> rindex = <span class="number">0</span>;</div><div class="line">		<span class="comment">//压缩</span></div><div class="line">		<span class="keyword">while</span> (lindex &lt; c.length) &#123;</div><div class="line">			sb.append(c[lindex]);</div><div class="line">			<span class="keyword">while</span> (rindex &lt; c.length - <span class="number">1</span> &amp;&amp; c[rindex + <span class="number">1</span>] == c[rindex]) &#123;</div><div class="line">				rindex++;</div><div class="line">			&#125;</div><div class="line">			sb.append(String.valueOf(rindex - lindex + <span class="number">1</span>));</div><div class="line">			lindex = rindex + <span class="number">1</span>;</div><div class="line">			rindex = lindex;</div><div class="line">		&#125;</div><div class="line">		<span class="comment">//注意：压缩后长度变小，才输出压缩后的结果，否则输出原字符串</span></div><div class="line">		<span class="keyword">if</span> (sb.toString().length() &gt;= c.length) &#123;</div><div class="line">			<span class="keyword">return</span> iniString;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">return</span> sb.toString();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>输入描述:<br>输入为一行，有两个整数N，M，以空格隔开。 (4 ≤ N ≤ 100000) (N ≤ M ≤ 100000)</p>
+<p>输出描述:<br>输出小易最少需要跳跃的步数,如果不能到达输出-1<br>示例1<br>输入</p>
+<pre><code>4 24
+</code></pre><p>输出</p>
+<pre><code>5
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">deal</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;<span class="comment">// m到n</span></div><div class="line">		<span class="keyword">int</span> mark[] = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">1</span>];<span class="comment">// 记录到达每一个位置的步数</span></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = m + <span class="number">1</span>; i &lt;= n; i++) &#123; <span class="comment">// 初始化</span></div><div class="line">			mark[i] = Integer.MAX_VALUE;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = m; i &lt; n - <span class="number">1</span>; i++) &#123; <span class="comment">// 填mark[]</span></div><div class="line">			<span class="keyword">if</span> (mark[i] == Integer.MAX_VALUE)</div><div class="line">				<span class="keyword">continue</span>; <span class="comment">// 如果当前起始位置本身不可达 不作处理</span></div><div class="line">			ArrayList&lt;Integer&gt; list = allFactor(i); <span class="comment">// 获得当前位置i的所有因子</span></div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; list.size(); j++) &#123; <span class="comment">// 计算i能到达的每一个位置tmp</span></div><div class="line">				<span class="keyword">int</span> tmp = i + list.get(j);</div><div class="line">				<span class="keyword">int</span> count = mark[i] + <span class="number">1</span>;</div><div class="line">				<span class="keyword">if</span> (tmp &lt;= n &amp;&amp; mark[tmp] &gt; count) &#123; <span class="comment">// 如果从i到达位置tmp的次数比以前记录的小</span></div><div class="line">														<span class="comment">// 更新mark[tmp]</span></div><div class="line">					mark[tmp] = count;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> mark[n];</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ArrayList&lt;Integer&gt; <span class="title">allFactor</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;<span class="comment">// 获得n的所有因子 除1 n外</span></div><div class="line">		ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= Math.sqrt(n); i++) &#123;</div><div class="line">			<span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</div><div class="line">				list.add(i);</div><div class="line">				<span class="keyword">if</span> (i != n / i)</div><div class="line">					list.add(n / i);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> list;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</div><div class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		<span class="keyword">int</span> m = sc.nextInt();</div><div class="line">		<span class="keyword">int</span> n = sc.nextInt();</div><div class="line">		<span class="keyword">int</span> r = deal(m, n);</div><div class="line">		<span class="keyword">if</span> (r == Integer.MAX_VALUE)</div><div class="line">			r = -<span class="number">1</span>;</div><div class="line">		System.out.println(r);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -1326,7 +1375,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/16/算法/程序员笔试面试金典/字符串/字符串变换/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/23/算法/笔试真题/网易/2017/数字游戏/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -1345,7 +1394,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/16/算法/程序员笔试面试金典/字符串/字符串变换/" itemprop="url">字符串变化</a></h1>
+                <a class="post-title-link" href="/2017/08/23/算法/笔试真题/网易/2017/数字游戏/" itemprop="url">数字游戏</a></h1>
         
 
         <div class="post-meta">
@@ -1357,8 +1406,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-16T17:31:30+08:00">
-                2017-07-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-23T17:31:30+08:00">
+                2017-08-23
               </time>
             
 
@@ -1380,8 +1429,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/" itemprop="url" rel="index">
-                    <span itemprop="name">程序员面试金典</span>
+                  <a href="/categories/笔试/" itemprop="url" rel="index">
+                    <span itemprop="name">笔试</span>
                   </a>
                 </span>
 
@@ -1391,8 +1440,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/字符串/" itemprop="url" rel="index">
-                    <span itemprop="name">字符串</span>
+                  <a href="/categories/笔试/网易/" itemprop="url" rel="index">
+                    <span itemprop="name">网易</span>
                   </a>
                 </span>
 
@@ -1428,12 +1477,17 @@
         
           
             <blockquote>
-<p>题目描述<br>现有一个字典，同时给定字典中的两个字符串s和t，给定一个变换，每次可以改变字符串中的任意一个字符，<br>请设计一个算法，计算由s变换到t所需的最少步数，同时需要满足在变换过程中的每个串都是字典中的串。<br>给定一个string数组dic，同时给定数组大小n，串s和串t，请返回由s到t变换所需的最少步数。<br>若无法变换到t则返回-1。保证字符串长度均小于等于10，且字典中字符串数量小于等于500。</p>
+<p>题目描述<br>小易邀请你玩一个数字游戏，小易给你一系列的整数。你们俩使用这些整数玩游戏。每次小易会任意说一个数字出来，然后你需要从这一系列数字中选取一部分出来让它们的和等于小易所说的数字。 例如： 如果{2,1,2,7}是你有的一系列数，小易说的数字是11.你可以得到方案2+2+7 = 11.如果顽皮的小易想坑你，他说的数字是6，那么你没有办法拼凑出和为6 现在小易给你n个数，让你找出无法从n个数中选取部分求和的数字中的最小数。</p>
 </blockquote>
-<pre><code>测试样例：
-[&quot;abc&quot;,&quot;adc&quot;,&quot;bdc&quot;,&quot;aaa&quot;],4,&quot;abc&quot;,&quot;bdc&quot;
-返回：2
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Change</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">countChanges</span><span class="params">(String[] dic, <span class="keyword">int</span> n, String s, String t)</span> </span>&#123;</div><div class="line">		<span class="comment">// System.out.println(Arrays.toString(dic));</span></div><div class="line">		<span class="comment">// System.out.println("s:" + s);</span></div><div class="line">		<span class="comment">// System.out.println("t:" + t);</span></div><div class="line">		<span class="comment">// 基本字符集合</span></div><div class="line">		HashSet&lt;Character&gt; baseset = <span class="keyword">new</span> HashSet&lt;Character&gt;();</div><div class="line">		<span class="keyword">char</span>[] c1 = s.toCharArray();</div><div class="line">		<span class="keyword">char</span>[] c2 = t.toCharArray();</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; c1.length; i++) &#123;</div><div class="line">			baseset.add(c1[i]);</div><div class="line">			baseset.add(c2[i]);</div><div class="line">		&#125;</div><div class="line">		<span class="comment">// 基本字典</span></div><div class="line">		HashMap&lt;String, Integer&gt; baseMap = <span class="keyword">new</span> HashMap&lt;String, Integer&gt;();</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">			<span class="keyword">if</span> (dic[i].length() == s.length()) &#123;</div><div class="line">				<span class="keyword">char</span>[] c = dic[i].toCharArray();</div><div class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; c.length; j++) &#123;</div><div class="line">					<span class="keyword">if</span> (baseset.contains(c[j]) &amp;&amp; !dic[i].equals(s)) &#123;</div><div class="line">						baseMap.put(dic[i], <span class="number">0</span>);</div><div class="line">						<span class="keyword">break</span>;</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="comment">// System.out.println(baseMap.toString());</span></div><div class="line">		ArrayList&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</div><div class="line">		list.add(s);</div><div class="line">		buildTree(list, t, baseMap, <span class="number">0</span>);</div><div class="line">		<span class="comment">// System.out.println(baseMap.toString());</span></div><div class="line">		<span class="keyword">return</span> baseMap.get(t);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">buildTree</span><span class="params">(ArrayList&lt;String&gt; str, String t, HashMap&lt;String, Integer&gt; baseMap, <span class="keyword">int</span> i)</span> </span>&#123;</div><div class="line">		ArrayList&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</div><div class="line">		<span class="keyword">for</span> (String s : str) &#123;</div><div class="line">			i++;</div><div class="line">			<span class="keyword">for</span> (Entry&lt;String, Integer&gt; m : baseMap.entrySet()) &#123;</div><div class="line">				<span class="keyword">if</span> (m.getValue() == <span class="number">0</span> &amp;&amp; hasSame(s, m.getKey())) &#123;</div><div class="line">					m.setValue(i);</div><div class="line">					<span class="comment">// System.out.println("str:" + m.getKey() + " i:" + i);</span></div><div class="line">					<span class="keyword">if</span> (m.getKey().equals(t)) &#123;</div><div class="line">						<span class="keyword">return</span>;</div><div class="line">					&#125;</div><div class="line">					list.add(m.getKey());</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		buildTree(list, t, baseMap, i);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">hasSame</span><span class="params">(String a, String b)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span> (a.equals(b)) &#123;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">int</span> flag = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length(); i++) &#123;</div><div class="line">			<span class="keyword">if</span> (a.charAt(i) == b.charAt(i)) &#123;</div><div class="line">				flag++;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> flag == a.length() - <span class="number">1</span> ? <span class="keyword">true</span> : <span class="keyword">false</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>输入描述:<br>输入第一行为数字个数n (n ≤ 20)<br>第二行为n个数xi (1 ≤ xi ≤ 100000)</p>
+<p>输出描述:<br>输出最小不能由n个数选取求和组成的数</p>
+<p>示例1</p>
+<p>输入</p>
+<pre><code>3
+5 1 2
+</code></pre><p>输出</p>
+<pre><code>4
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		<span class="keyword">int</span> n = sc.nextInt();</div><div class="line">		ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">			list.add(sc.nextInt());</div><div class="line">		&#125;</div><div class="line">		Collections.sort(list);</div><div class="line">		<span class="keyword">int</span> res = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); i++) &#123;</div><div class="line">			<span class="keyword">if</span> (list.get(i) &gt; (res + <span class="number">1</span>))</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">else</span></div><div class="line">				res += list.get(i);</div><div class="line">		&#125;</div><div class="line">		System.out.println(res+<span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -1477,7 +1531,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/15/算法/程序员笔试面试金典/基础/交换两个数的值/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/23/算法/笔试真题/网易/2017/计算糖果/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -1496,7 +1550,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/15/算法/程序员笔试面试金典/基础/交换两个数的值/" itemprop="url">交换两个数的值</a></h1>
+                <a class="post-title-link" href="/2017/08/23/算法/笔试真题/网易/2017/计算糖果/" itemprop="url">计算糖果</a></h1>
         
 
         <div class="post-meta">
@@ -1508,8 +1562,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-15T17:31:30+08:00">
-                2017-07-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-23T17:31:30+08:00">
+                2017-08-23
               </time>
             
 
@@ -1531,8 +1585,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/" itemprop="url" rel="index">
-                    <span itemprop="name">程序员面试金典</span>
+                  <a href="/categories/笔试/" itemprop="url" rel="index">
+                    <span itemprop="name">笔试</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔试/网易/" itemprop="url" rel="index">
+                    <span itemprop="name">网易</span>
                   </a>
                 </span>
 
@@ -1568,12 +1633,15 @@
         
           
             <blockquote>
-<p>题目描述<br>请编写一个函数，函数内不使用任何临时变量，直接交换两个数的值。<br>给定一个int数组AB，其第零个元素和第一个元素为待交换的值，请返回交换后的数组。</p>
+<p>题目描述<br>A,B,C三个人是好朋友,每个人手里都有一些糖果,我们不知道他们每个人手上具体有多少个糖果,但是我们知道以下的信息：<br>A - B, B - C, A + B, B + C. 这四个数值.每个字母代表每个人所拥有的糖果数.<br>现在需要通过这四个数值计算出每个人手里有多少个糖果,即A,B,C。这里保证最多只有一组整数A,B,C满足所有题设条件。</p>
 </blockquote>
-<pre><code>测试样例：
-[1,2]
-返回：[2,1]
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Exchange</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] exchangeAB(<span class="keyword">int</span>[] AB) &#123;</div><div class="line">    	AB[<span class="number">0</span>] = AB[<span class="number">0</span>]^AB[<span class="number">1</span>];</div><div class="line">    	AB[<span class="number">1</span>] = AB[<span class="number">0</span>]^AB[<span class="number">1</span>];</div><div class="line">    	AB[<span class="number">0</span>] = AB[<span class="number">0</span>]^AB[<span class="number">1</span>];</div><div class="line">    	<span class="keyword">return</span> AB;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>输入描述:<br>输入为一行，一共4个整数，分别为A - B，B - C，A + B，B + C，用空格隔开。 范围均在-30到30之间(闭区间)。</p>
+<p>输出描述:<br>输出为一行，如果存在满足的整数A，B，C则按顺序输出A，B，C，用空格隔开，行末无空格。 如果不存在这样的整数A，B，C，则输出No</p>
+<p>示例1</p>
+<p>输入</p>
+<p>1 -2 3 4<br>输出</p>
+<p>2 1 3</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		<span class="keyword">int</span> a = sc.nextInt();<span class="comment">// A - B</span></div><div class="line">		<span class="keyword">int</span> b = sc.nextInt();<span class="comment">// B - C</span></div><div class="line">		<span class="keyword">int</span> c = sc.nextInt();<span class="comment">// A + B</span></div><div class="line">		<span class="keyword">int</span> d = sc.nextInt();<span class="comment">// B + C</span></div><div class="line">		<span class="keyword">if</span> ((a + c) % <span class="number">2</span> != <span class="number">0</span>) &#123;</div><div class="line">			System.out.println(<span class="string">"No"</span>);</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">int</span> A = (a + c) / <span class="number">2</span>;</div><div class="line">		<span class="keyword">if</span> (A &lt; <span class="number">0</span>) &#123;</div><div class="line">			System.out.println(<span class="string">"No"</span>);</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> ((b + d) % <span class="number">2</span> != <span class="number">0</span>) &#123;</div><div class="line">			System.out.println(<span class="string">"No"</span>);</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">int</span> B = (b + d) / <span class="number">2</span>;</div><div class="line">		<span class="keyword">if</span> (B &lt; <span class="number">0</span>) &#123;</div><div class="line">			System.out.println(<span class="string">"No"</span>);</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">int</span> C = B - b;</div><div class="line">		<span class="keyword">if</span> (C &lt; <span class="number">0</span>) &#123;</div><div class="line">			System.out.println(<span class="string">"No"</span>);</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">		System.out.print(String.valueOf(A) + <span class="string">" "</span> + String.valueOf(B) + <span class="string">" "</span> + String.valueOf(C));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -1617,7 +1685,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/15/算法/程序员笔试面试金典/查找/字符串二分查找/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/23/算法/笔试真题/网易/2017/星际穿越/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -1636,7 +1704,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/15/算法/程序员笔试面试金典/查找/字符串二分查找/" itemprop="url">字符串查找</a></h1>
+                <a class="post-title-link" href="/2017/08/23/算法/笔试真题/网易/2017/星际穿越/" itemprop="url">星际穿越</a></h1>
         
 
         <div class="post-meta">
@@ -1648,8 +1716,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-15T17:31:30+08:00">
-                2017-07-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-23T17:31:30+08:00">
+                2017-08-23
               </time>
             
 
@@ -1671,8 +1739,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/" itemprop="url" rel="index">
-                    <span itemprop="name">程序员面试金典</span>
+                  <a href="/categories/笔试/" itemprop="url" rel="index">
+                    <span itemprop="name">笔试</span>
                   </a>
                 </span>
 
@@ -1682,8 +1750,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/查找/" itemprop="url" rel="index">
-                    <span itemprop="name">查找</span>
+                  <a href="/categories/笔试/网易/" itemprop="url" rel="index">
+                    <span itemprop="name">网易</span>
                   </a>
                 </span>
 
@@ -1719,12 +1787,16 @@
         
           
             <blockquote>
-<p>题目描述<br>有一个排过序的字符串数组，但是其中有插入了一些空字符串，请设计一个算法，找出给定字符串的位置。<br>算法的查找部分的复杂度应该为log级别。<br>给定一个string数组str,同时给定数组大小n和需要查找的string x，请返回该串的位置(位置从零开始)。</p>
+<p>题目描述<br>航天飞行器是一项复杂而又精密的仪器，飞行器的损耗主要集中在发射和降落的过程，科学家根据实验数据估计，如果在发射过程中，产生了 x 程度的损耗，那么在降落的过程中就会产生 x2 程度的损耗，如果飞船的总损耗超过了它的耐久度，飞行器就会爆炸坠毁。问一艘耐久度为 h 的飞行器，假设在飞行过程中不产生损耗，那么为了保证其可以安全的到达目的地，只考虑整数解，至多发射过程中可以承受多少程度的损耗？</p>
 </blockquote>
-<pre><code>测试样例：
-[&quot;a&quot;,&quot;b&quot;,&quot;&quot;,&quot;c&quot;,&quot;&quot;,&quot;d&quot;],6,&quot;c&quot;
-返回：3
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FindString</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findString</span><span class="params">(String[] str, <span class="keyword">int</span> n, String x)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> getIndex(str, <span class="number">0</span>, n - <span class="number">1</span>, x);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getIndex</span><span class="params">(String[] s, <span class="keyword">int</span> start, <span class="keyword">int</span> end, String x)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span> (start &gt; end) &#123;</div><div class="line">			<span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">int</span> mid = (start + end) / <span class="number">2</span>;</div><div class="line">		<span class="keyword">if</span> (s[mid].equals(x)) &#123;</div><div class="line">			<span class="keyword">return</span> mid;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (s[mid].compareTo(x) &lt; <span class="number">0</span>) &#123;</div><div class="line">			start = mid + <span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (s[mid].compareTo(x) &gt; <span class="number">0</span>) &#123;</div><div class="line">			end = mid - <span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> getIndex(s, start, end, x);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>输入描述:<br>每个输入包含一个测试用例。每个测试用例包含一行一个整数 h （1 &lt;= h &lt;= 10^18）。</p>
+<p>输出描述:<br>输出一行一个整数表示结果。</p>
+<p>示例1</p>
+<p>输入</p>
+<pre><code>10
+</code></pre><p>输出</p>
+<pre><code>2
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		<span class="keyword">long</span> n = sc.nextLong();</div><div class="line">		<span class="keyword">long</span> i = (<span class="keyword">long</span>) Math.sqrt(n);</div><div class="line">		<span class="keyword">while</span>(i+i*i&lt;=n)&#123;</div><div class="line">			i++;</div><div class="line">		&#125;</div><div class="line">		System.out.println(i-<span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -1763,7 +1835,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1808,7 +1880,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">194</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1819,7 +1891,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1830,7 +1902,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1887,7 +1959,7 @@
 <div class="theme-info">
   zz21y.club -
   <a class="theme-link" href="https://zz21y.club">
-    NexT.Muse
+   <!-- NexT.Muse -->
   </a>
 </div>
 
