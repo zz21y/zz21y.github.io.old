@@ -413,6 +413,156 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/算法/程序员笔试面试金典/数学/直线相交/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zz21y">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zz21y">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/18/算法/程序员笔试面试金典/数学/直线相交/" itemprop="url">直线相交</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-18T17:31:30+08:00">
+                2017-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程序员面试金典/" itemprop="url" rel="index">
+                    <span itemprop="name">程序员面试金典</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程序员面试金典/数学/" itemprop="url" rel="index">
+                    <span itemprop="name">数学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>题目描述<br>给定直角坐标系上的两条直线，确定这两条直线会不会相交。<br>线段以斜率和截距的形式给出，即double s1，double s2，double y1，double y2，<br>分别代表直线1和2的斜率(即s1,s2)和截距(即y1,y2)，请返回一个bool，代表给定的两条直线是否相交。<br>这里两直线重合也认为相交。</p>
+</blockquote>
+<pre><code>测试样例：3.14,3.14,1,2
+返回：false
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CrossLine</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">checkCrossLine</span><span class="params">(<span class="keyword">double</span> s1, <span class="keyword">double</span> s2, <span class="keyword">double</span> y1, <span class="keyword">double</span> y2)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span> (s1 == s2 &amp;&amp; y1 != y2) &#123;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/算法/程序员笔试面试金典/链表/约瑟夫/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -720,454 +870,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/算法/程序员笔试面试金典/链表/实现栈组/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zz21y">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/18/算法/程序员笔试面试金典/链表/实现栈组/" itemprop="url">实现栈组</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-18T17:31:30+08:00">
-                2017-07-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/" itemprop="url" rel="index">
-                    <span itemprop="name">程序员面试金典</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/链表/" itemprop="url" rel="index">
-                    <span itemprop="name">链表</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>题目描述<br>请实现一种数据结构SetOfStacks，由多个栈组成，其中每个栈的大小为size，当前一个栈填满时，新建一个栈。<br>该数据结构应支持与普通栈相同的push和pop操作。<br>给定一个操作序列int[][2] ope，每个操作的第一个数代表操作类型，<br>若为1，则为push操作，后一个数为应push的数字；若为2，则为pop操作，后一个数无意义。<br>请返回一个int[][]，为完成所有操作后的SetOfStacks，<br>顺序应为从下到上，默认初始的SetOfStacks为空。保证数据合法。</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SetOfStacks</span> </span>&#123;</div><div class="line">	<span class="keyword">public</span> ArrayList&lt;ArrayList&lt;Integer&gt;&gt; setOfStacks(<span class="keyword">int</span>[][] ope, <span class="keyword">int</span> size) &#123;</div><div class="line">		ArrayList&lt;ArrayList&lt;Integer&gt;&gt; setOfStacks = <span class="keyword">new</span> ArrayList&lt;ArrayList&lt;Integer&gt;&gt;();</div><div class="line">		ArrayList&lt;Integer&gt; stack = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">		setOfStacks.add(stack);</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ope.length; i++) &#123;</div><div class="line">			<span class="keyword">switch</span> (ope[i][<span class="number">0</span>]) &#123;</div><div class="line">			<span class="keyword">case</span> <span class="number">1</span>:<span class="comment">// push</span></div><div class="line">				<span class="keyword">if</span> (stack.size() == size) &#123;</div><div class="line">					stack = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">					setOfStacks.add(stack);</div><div class="line">				&#125;</div><div class="line">				stack.add(ope[i][<span class="number">1</span>]);</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">2</span>:<span class="comment">// pop</span></div><div class="line">				<span class="keyword">if</span> (stack.isEmpty()) &#123;</div><div class="line">					setOfStacks.remove(setOfStacks.size() - <span class="number">1</span>);</div><div class="line">					stack = setOfStacks.get(setOfStacks.size() - <span class="number">1</span>);</div><div class="line">				&#125;</div><div class="line">				stack.remove(stack.size() - <span class="number">1</span>);</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> setOfStacks;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/算法/程序员笔试面试金典/链表/回文链表/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zz21y">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/18/算法/程序员笔试面试金典/链表/回文链表/" itemprop="url">回文链表</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-18T17:31:30+08:00">
-                2017-07-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/" itemprop="url" rel="index">
-                    <span itemprop="name">程序员面试金典</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/链表/" itemprop="url" rel="index">
-                    <span itemprop="name">链表</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>题目描述<br>请编写一个函数，检查链表是否为回文。<br>给定一个链表ListNode* pHead，请返回一个bool，代表链表是否为回文。</p>
-</blockquote>
-<pre><code>测试样例：
-{1,2,3,2,1}
-返回：true
-{1,2,3,2,3}
-返回：false
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Palindrome</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(ListNode pHead)</span> </span>&#123;</div><div class="line">		Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</div><div class="line">		ListNode node = pHead;</div><div class="line">		<span class="keyword">while</span> (node != <span class="keyword">null</span>) &#123;</div><div class="line">			stack.add(node.val);</div><div class="line">			node = node.next;</div><div class="line">		&#125;</div><div class="line">		node = pHead;</div><div class="line">		<span class="keyword">while</span> (!stack.isEmpty()) &#123;</div><div class="line">			<span class="keyword">if</span> (stack.pop() != node.val) &#123;</div><div class="line">				<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">			&#125;</div><div class="line">			node = node.next;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/算法/程序员笔试面试金典/链表/猫狗收养/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zz21y">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/18/算法/程序员笔试面试金典/链表/猫狗收养/" itemprop="url">猫狗收养</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-18T17:31:30+08:00">
-                2017-07-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/" itemprop="url" rel="index">
-                    <span itemprop="name">程序员面试金典</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员面试金典/链表/" itemprop="url" rel="index">
-                    <span itemprop="name">链表</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>题目描述<br>有家动物收容所只收留猫和狗，但有特殊的收养规则，收养人有两种收养方式，<br>第一种为直接收养所有动物中最早进入收容所的，第二种为选择收养的动物类型（猫或狗），<br>并收养该种动物中最早进入收容所的。<br>给定一个操作序列int[][2] ope代表所有事件。<br>若第一个元素为1，则代表有动物进入收容所，第二个元素为动物的编号，正数代表狗，负数代表猫；<br>若第一个元素为2，则代表有人收养动物，第二个元素若为0，则采取第一种收养方式，若为1，则指定收养狗，若为-1则指定收养猫。<br>请按顺序返回收养的序列。若出现不合法的操作，即没有可以符合领养要求的动物，则将这次领养操作忽略。<br>测试样例：<br>[[1,1],[1,-1],[2,0],[2,-1]]<br>返回：[1,-1]</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CatDogAsylum</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> ArrayList&lt;Integer&gt; <span class="title">asylum</span><span class="params">(<span class="keyword">int</span>[][] ope)</span> </span>&#123;</div><div class="line">		ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">		ArrayList&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ope.length; i++) &#123;</div><div class="line">			<span class="keyword">switch</span> (ope[i][<span class="number">0</span>]) &#123;</div><div class="line">			<span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">				list.add(ope[i][<span class="number">1</span>]);</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">2</span>:</div><div class="line">				<span class="keyword">switch</span> (ope[i][<span class="number">1</span>]) &#123;</div><div class="line">				<span class="keyword">case</span> <span class="number">0</span>:</div><div class="line">					res.add(list.get(<span class="number">0</span>));</div><div class="line">					list.remove(<span class="number">0</span>);</div><div class="line">					<span class="keyword">break</span>;</div><div class="line">				<span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">					<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; list.size(); j++) &#123;</div><div class="line">						<span class="keyword">if</span> (list.get(j) &gt; <span class="number">0</span>) &#123;</div><div class="line">							res.add(list.get(j));</div><div class="line">							list.remove(j);</div><div class="line">							<span class="keyword">break</span>;</div><div class="line">						&#125;</div><div class="line">					&#125;</div><div class="line">					<span class="keyword">break</span>;</div><div class="line">				<span class="keyword">case</span> -<span class="number">1</span>:</div><div class="line">					<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; list.size(); j++) &#123;</div><div class="line">						<span class="keyword">if</span> (list.get(j) &lt; <span class="number">0</span>) &#123;</div><div class="line">							res.add(list.get(j));</div><div class="line">							list.remove(j);</div><div class="line">							<span class="keyword">break</span>;</div><div class="line">						&#125;</div><div class="line">					&#125;</div><div class="line">					<span class="keyword">break</span>;</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> res;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/算法/程序员笔试面试金典/链表/链表分割/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1315,7 +1017,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/算法/程序员笔试面试金典/数学/将两个数字相加/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/算法/程序员笔试面试金典/数学/直线平分矩形/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -1334,7 +1036,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/18/算法/程序员笔试面试金典/数学/将两个数字相加/" itemprop="url">不用运算符将两数相加</a></h1>
+                <a class="post-title-link" href="/2017/07/18/算法/程序员笔试面试金典/数学/直线平分矩形/" itemprop="url">直线平分矩形</a></h1>
         
 
         <div class="post-meta">
@@ -1417,12 +1119,307 @@
         
           
             <blockquote>
-<p>题目描述<br>请编写一个函数，将两个数字相加。不得使用+或其他算数运算符。给定两个int A和B。请返回A＋B的值</p>
+<p>在二维平面上，有两个正方形，请找出一条直线，能够将这两个正方形对半分。假定正方形的上下两条边与x轴平行。<br>给定两个vecotrA和B，分别为两个正方形的四个顶点。请返回一个double[]，<br>代表所求的平分直线的斜率和截距，保证斜率存在。</p>
 </blockquote>
 <pre><code>测试样例：
-1,2
-返回：3
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UnusualAdd</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">addAB</span><span class="params">(<span class="keyword">int</span> A, <span class="keyword">int</span> B)</span> </span>&#123;</div><div class="line">    	<span class="keyword">if</span>(A==<span class="number">0</span>||B==<span class="number">0</span>)&#123;</div><div class="line">    		<span class="keyword">return</span> A==<span class="number">0</span>?B:A;</div><div class="line">    	&#125;</div><div class="line">    	<span class="keyword">else</span>&#123;</div><div class="line">    		<span class="keyword">return</span> addAB(A^B,(A&amp;B)&lt;&lt;<span class="number">1</span>);</div><div class="line">    	&#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+[(0,0),(0,1),(1,1),(1,0)],[(1,0),(1,1),(2,0),(2,1)]
+返回：[0.0，0.5]
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Bipartition</span> </span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">double</span>[] getBipartition(Point[] A, Point[] B) &#123;</div><div class="line">		<span class="keyword">double</span> xa = (A[<span class="number">0</span>].x + A[<span class="number">2</span>].x) / <span class="number">2</span>;</div><div class="line">		<span class="keyword">double</span> ya = (A[<span class="number">0</span>].y + A[<span class="number">2</span>].y) / <span class="number">2</span>;</div><div class="line">		<span class="keyword">double</span> xb = (B[<span class="number">0</span>].x + B[<span class="number">2</span>].x) / <span class="number">2</span>;</div><div class="line">		<span class="keyword">double</span> yb = (B[<span class="number">0</span>].y + B[<span class="number">2</span>].y) / <span class="number">2</span>;</div><div class="line">		<span class="keyword">double</span> k = <span class="number">0.0</span>;</div><div class="line">		<span class="keyword">if</span> (xa == xb) &#123;</div><div class="line">			k = <span class="number">1</span>;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			k = (ya - yb) / (xa - xb);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">double</span> b = ya - k * xa;</div><div class="line">		<span class="keyword">double</span>[] res = <span class="keyword">new</span> <span class="keyword">double</span>[<span class="number">2</span>];</div><div class="line">		res[<span class="number">0</span>]=k;</div><div class="line">		res[<span class="number">1</span>]=b;</div><div class="line">		<span class="keyword">return</span> res;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/算法/程序员笔试面试金典/链表/实现栈组/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zz21y">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zz21y">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/18/算法/程序员笔试面试金典/链表/实现栈组/" itemprop="url">实现栈组</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-18T17:31:30+08:00">
+                2017-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程序员面试金典/" itemprop="url" rel="index">
+                    <span itemprop="name">程序员面试金典</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程序员面试金典/链表/" itemprop="url" rel="index">
+                    <span itemprop="name">链表</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>题目描述<br>请实现一种数据结构SetOfStacks，由多个栈组成，其中每个栈的大小为size，当前一个栈填满时，新建一个栈。<br>该数据结构应支持与普通栈相同的push和pop操作。<br>给定一个操作序列int[][2] ope，每个操作的第一个数代表操作类型，<br>若为1，则为push操作，后一个数为应push的数字；若为2，则为pop操作，后一个数无意义。<br>请返回一个int[][]，为完成所有操作后的SetOfStacks，<br>顺序应为从下到上，默认初始的SetOfStacks为空。保证数据合法。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SetOfStacks</span> </span>&#123;</div><div class="line">	<span class="keyword">public</span> ArrayList&lt;ArrayList&lt;Integer&gt;&gt; setOfStacks(<span class="keyword">int</span>[][] ope, <span class="keyword">int</span> size) &#123;</div><div class="line">		ArrayList&lt;ArrayList&lt;Integer&gt;&gt; setOfStacks = <span class="keyword">new</span> ArrayList&lt;ArrayList&lt;Integer&gt;&gt;();</div><div class="line">		ArrayList&lt;Integer&gt; stack = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">		setOfStacks.add(stack);</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ope.length; i++) &#123;</div><div class="line">			<span class="keyword">switch</span> (ope[i][<span class="number">0</span>]) &#123;</div><div class="line">			<span class="keyword">case</span> <span class="number">1</span>:<span class="comment">// push</span></div><div class="line">				<span class="keyword">if</span> (stack.size() == size) &#123;</div><div class="line">					stack = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">					setOfStacks.add(stack);</div><div class="line">				&#125;</div><div class="line">				stack.add(ope[i][<span class="number">1</span>]);</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">2</span>:<span class="comment">// pop</span></div><div class="line">				<span class="keyword">if</span> (stack.isEmpty()) &#123;</div><div class="line">					setOfStacks.remove(setOfStacks.size() - <span class="number">1</span>);</div><div class="line">					stack = setOfStacks.get(setOfStacks.size() - <span class="number">1</span>);</div><div class="line">				&#125;</div><div class="line">				stack.remove(stack.size() - <span class="number">1</span>);</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> setOfStacks;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/算法/程序员笔试面试金典/链表/猫狗收养/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zz21y">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zz21y">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/18/算法/程序员笔试面试金典/链表/猫狗收养/" itemprop="url">猫狗收养</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-18T17:31:30+08:00">
+                2017-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程序员面试金典/" itemprop="url" rel="index">
+                    <span itemprop="name">程序员面试金典</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程序员面试金典/链表/" itemprop="url" rel="index">
+                    <span itemprop="name">链表</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>题目描述<br>有家动物收容所只收留猫和狗，但有特殊的收养规则，收养人有两种收养方式，<br>第一种为直接收养所有动物中最早进入收容所的，第二种为选择收养的动物类型（猫或狗），<br>并收养该种动物中最早进入收容所的。<br>给定一个操作序列int[][2] ope代表所有事件。<br>若第一个元素为1，则代表有动物进入收容所，第二个元素为动物的编号，正数代表狗，负数代表猫；<br>若第一个元素为2，则代表有人收养动物，第二个元素若为0，则采取第一种收养方式，若为1，则指定收养狗，若为-1则指定收养猫。<br>请按顺序返回收养的序列。若出现不合法的操作，即没有可以符合领养要求的动物，则将这次领养操作忽略。<br>测试样例：<br>[[1,1],[1,-1],[2,0],[2,-1]]<br>返回：[1,-1]</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CatDogAsylum</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> ArrayList&lt;Integer&gt; <span class="title">asylum</span><span class="params">(<span class="keyword">int</span>[][] ope)</span> </span>&#123;</div><div class="line">		ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">		ArrayList&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ope.length; i++) &#123;</div><div class="line">			<span class="keyword">switch</span> (ope[i][<span class="number">0</span>]) &#123;</div><div class="line">			<span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">				list.add(ope[i][<span class="number">1</span>]);</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">2</span>:</div><div class="line">				<span class="keyword">switch</span> (ope[i][<span class="number">1</span>]) &#123;</div><div class="line">				<span class="keyword">case</span> <span class="number">0</span>:</div><div class="line">					res.add(list.get(<span class="number">0</span>));</div><div class="line">					list.remove(<span class="number">0</span>);</div><div class="line">					<span class="keyword">break</span>;</div><div class="line">				<span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">					<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; list.size(); j++) &#123;</div><div class="line">						<span class="keyword">if</span> (list.get(j) &gt; <span class="number">0</span>) &#123;</div><div class="line">							res.add(list.get(j));</div><div class="line">							list.remove(j);</div><div class="line">							<span class="keyword">break</span>;</div><div class="line">						&#125;</div><div class="line">					&#125;</div><div class="line">					<span class="keyword">break</span>;</div><div class="line">				<span class="keyword">case</span> -<span class="number">1</span>:</div><div class="line">					<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; list.size(); j++) &#123;</div><div class="line">						<span class="keyword">if</span> (list.get(j) &lt; <span class="number">0</span>) &#123;</div><div class="line">							res.add(list.get(j));</div><div class="line">							list.remove(j);</div><div class="line">							<span class="keyword">break</span>;</div><div class="line">						&#125;</div><div class="line">					&#125;</div><div class="line">					<span class="keyword">break</span>;</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> res;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -1618,7 +1615,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/算法/程序员笔试面试金典/数学/乘法减法和除法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/算法/程序员笔试面试金典/数学/将两个数字相加/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -1637,7 +1634,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/18/算法/程序员笔试面试金典/数学/乘法减法和除法/" itemprop="url">乘法、减法和除法</a></h1>
+                <a class="post-title-link" href="/2017/07/18/算法/程序员笔试面试金典/数学/将两个数字相加/" itemprop="url">不用运算符将两数相加</a></h1>
         
 
         <div class="post-meta">
@@ -1720,12 +1717,12 @@
         
           
             <blockquote>
-<p>题目描述<br>请编写一个方法，实现整数的乘法、减法和除法运算(这里的除指整除)。只允许使用加号。<br>给定两个正整数int a,int b,同时给定一个int type代表运算的类型，<br>1为求a ＊ b，0为求a ／ b，-1为求a － b。请返回计算的结果，保证数据合法且结果一定在int范围内。</p>
+<p>题目描述<br>请编写一个函数，将两个数字相加。不得使用+或其他算数运算符。给定两个int A和B。请返回A＋B的值</p>
 </blockquote>
 <pre><code>测试样例：
-1,2,1
-返回：2
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AddSubstitution</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">calc</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> type)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> res = <span class="number">0</span>;</div><div class="line">		<span class="keyword">switch</span> (type) &#123;</div><div class="line">		<span class="keyword">case</span> <span class="number">1</span>:<span class="comment">// a ＊ b</span></div><div class="line">			res = times(a, b);</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="number">0</span>:<span class="comment">// a ／ b</span></div><div class="line">			res = divdie(a, b);</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> -<span class="number">1</span>:<span class="comment">// a － b</span></div><div class="line">			res = minus(a, b);</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> res;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">negate</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> neg = <span class="number">0</span>;</div><div class="line">		<span class="keyword">int</span> d = n &lt; <span class="number">0</span> ? <span class="number">1</span> : -<span class="number">1</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; Math.abs(n); i++) &#123;</div><div class="line">			neg += d;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> neg;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">minus</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> a + negate(b);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">times</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> res = <span class="number">0</span>;</div><div class="line">		<span class="keyword">int</span> min = Math.min(Math.abs(a), Math.abs(b));</div><div class="line">		<span class="keyword">int</span> max = Math.max(Math.abs(a), Math.abs(b));</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; min; i++) &#123;</div><div class="line">			res += max;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> ((a &gt; <span class="number">0</span> &amp;&amp; b &lt; <span class="number">0</span>) || (b &gt; <span class="number">0</span> &amp;&amp; a &lt; <span class="number">0</span>)) &#123;</div><div class="line">			<span class="keyword">return</span> negate(res);</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">return</span> res;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">divdie</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> res = <span class="number">0</span>;</div><div class="line">		<span class="keyword">int</span> abs_a = Math.abs(a);</div><div class="line">		<span class="keyword">int</span> abs_b = Math.abs(b);</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;; i++) &#123;</div><div class="line">			res += abs_b;</div><div class="line">			<span class="keyword">if</span> (res == abs_a) &#123;</div><div class="line">				<span class="keyword">if</span> ((a &gt; <span class="number">0</span> &amp;&amp; b &lt; <span class="number">0</span>) || (b &gt; <span class="number">0</span> &amp;&amp; a &lt; <span class="number">0</span>)) &#123;</div><div class="line">					<span class="keyword">return</span> negate(i);</div><div class="line">				&#125; <span class="keyword">else</span> &#123;</div><div class="line">					<span class="keyword">return</span> i;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		System.out.println(calc(<span class="number">200</span>,-<span class="number">2</span>,<span class="number">0</span>));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+1,2
+返回：3
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UnusualAdd</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">addAB</span><span class="params">(<span class="keyword">int</span> A, <span class="keyword">int</span> B)</span> </span>&#123;</div><div class="line">    	<span class="keyword">if</span>(A==<span class="number">0</span>||B==<span class="number">0</span>)&#123;</div><div class="line">    		<span class="keyword">return</span> A==<span class="number">0</span>?B:A;</div><div class="line">    	&#125;</div><div class="line">    	<span class="keyword">else</span>&#123;</div><div class="line">    		<span class="keyword">return</span> addAB(A^B,(A&amp;B)&lt;&lt;<span class="number">1</span>);</div><div class="line">    	&#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -1882,15 +1879,16 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  其它域名
 </div>
 
 <div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  zz21y.club -
+  <a class="theme-link" href="https://zz21y.club">
     NexT.Muse
   </a>
 </div>
+
 
 
         
@@ -1931,13 +1929,7 @@
 
 
 
-  
-  
 
-
-
-  
-  
 
 
 
@@ -1965,15 +1957,6 @@
 
   
   <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/three.min.js"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
 
 
   
