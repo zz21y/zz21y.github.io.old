@@ -266,7 +266,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/字符串/替换空格/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/字符串/翻转单词顺序列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -285,7 +285,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/26/算法/剑指offer/字符串/替换空格/" itemprop="url">替换空格</a></h1>
+                <a class="post-title-link" href="/2017/06/26/算法/剑指offer/字符串/翻转单词顺序列/" itemprop="url">翻转单词顺序列</a></h1>
         
 
         <div class="post-meta">
@@ -331,8 +331,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/字符串/" itemprop="url" rel="index">
-                    <span itemprop="name">字符串</span>
+                  <a href="/categories/剑指offer/知识迁移能力/" itemprop="url" rel="index">
+                    <span itemprop="name">知识迁移能力</span>
                   </a>
                 </span>
 
@@ -368,10 +368,9 @@
         
           
             <blockquote>
-<p>请实现一个函数，将一个字符串中的空格替换成“%20”。</p>
-<p>例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。</p>
+<p>翻转单词顺序列 例如，“student. a am I”。后来才意识到，这家伙原来把句子单词的顺序翻转了， 正确的句子应该是“I am a student.”。</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">replaceSpace</span><span class="params">(StringBuffer str)</span> </span>&#123;</div><div class="line">   	<span class="keyword">char</span>[] c = str.toString().toCharArray();</div><div class="line">   	StringBuffer sb = <span class="keyword">new</span> StringBuffer();</div><div class="line">   	<span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;c.length;i++)&#123;</div><div class="line">   		<span class="keyword">if</span>(c[i]!=<span class="string">' '</span>)&#123;</div><div class="line">   			sb.append(c[i]);</div><div class="line">   		&#125;<span class="keyword">else</span>&#123;</div><div class="line">   			sb.append(<span class="string">"%20"</span>);</div><div class="line">   		&#125;</div><div class="line">   	&#125;</div><div class="line">   	<span class="keyword">return</span> sb.toString();</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">ReverseSentence</span><span class="params">(String str)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span>(str.trim().equals(<span class="string">""</span>))&#123;</div><div class="line">		<span class="keyword">return</span> str;</div><div class="line">	&#125;</div><div class="line">	String[] s = str.split(<span class="string">" "</span>);</div><div class="line">	StringBuffer sb = <span class="keyword">new</span> StringBuffer();</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = s.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</div><div class="line">		<span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</div><div class="line">			sb.append(s[i]);</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			sb.append(s[i] + <span class="string">" "</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> sb.toString();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -415,7 +414,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/字符串/字符流中第一个不重复的字符/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/字符串/左旋转字符串/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -434,7 +433,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/26/算法/剑指offer/字符串/字符流中第一个不重复的字符/" itemprop="url">字符流中第一个不重复的字符</a></h1>
+                <a class="post-title-link" href="/2017/06/26/算法/剑指offer/字符串/左旋转字符串/" itemprop="url">左旋转字符串</a></h1>
         
 
         <div class="post-meta">
@@ -480,8 +479,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/字符串/" itemprop="url" rel="index">
-                    <span itemprop="name">字符串</span>
+                  <a href="/categories/剑指offer/知识迁移能力/" itemprop="url" rel="index">
+                    <span itemprop="name">知识迁移能力</span>
                   </a>
                 </span>
 
@@ -517,9 +516,12 @@
         
           
             <blockquote>
-<p>请实现一个函数用来找出字符流中第一个只出现一次的字符。例如，当从字符流中只读出前两个字符”go”时，第一个只出现一次的字符是”g”。当从该字符流中读出前六个字符“google”时，第一个只出现一次的字符是”l”。<br>输出描述:<br>如果当前字符流没有存在出现一次的字符，返回#字符。</p>
+<p>对于一个给定的字符序列S，请你把其循环左移K位后的序列输出。 例如，字符序列S=”abcXYZdef”,要求输出循环左移3位后的结果，</p>
+<ul>
+<li>即“XYZdefabc”。</li>
+</ul>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">HashMap&lt;Character, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Character, Integer&gt;();</div><div class="line">ArrayList&lt;Character&gt; list = <span class="keyword">new</span> ArrayList&lt;Character&gt;();</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Insert</span><span class="params">(<span class="keyword">char</span> ch)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (!map.containsKey(ch)) &#123;</div><div class="line">		map.put(ch, <span class="number">1</span>);</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		map.put(ch, <span class="number">2</span>);</div><div class="line">	&#125;</div><div class="line">	list.add(ch);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// return the first appearence once char in current stringstream</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">char</span> <span class="title">FirstAppearingOnce</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">char</span> key : list) &#123;</div><div class="line">		<span class="keyword">if</span> (map.get(key) == <span class="number">1</span>) &#123;</div><div class="line">			<span class="keyword">return</span> key;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="string">'#'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">LeftRotateString</span><span class="params">(String str, <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span>(str.length()==<span class="number">0</span>)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">""</span>;</div><div class="line">	&#125;</div><div class="line">	StringBuffer sb = <span class="keyword">new</span> StringBuffer();</div><div class="line">	sb.append(str.substring(n,str.length()));</div><div class="line">	sb.append(str.substring(<span class="number">0</span>,n));</div><div class="line">	<span class="keyword">return</span> sb.toString();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -563,7 +565,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/24/算法/剑指offer/数组/构建乘积数组/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/24/算法/剑指offer/数组/数组中只出现一次的数字/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -582,7 +584,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/24/算法/剑指offer/数组/构建乘积数组/" itemprop="url">构建乘积数组</a></h1>
+                <a class="post-title-link" href="/2017/06/24/算法/剑指offer/数组/数组中只出现一次的数字/" itemprop="url">数组中只出现一次的数字</a></h1>
         
 
         <div class="post-meta">
@@ -628,8 +630,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/数组/" itemprop="url" rel="index">
-                    <span itemprop="name">数组</span>
+                  <a href="/categories/剑指offer/知识迁移能力/" itemprop="url" rel="index">
+                    <span itemprop="name">知识迁移能力</span>
                   </a>
                 </span>
 
@@ -665,9 +667,9 @@
         
           
             <blockquote>
-<p>给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],<br>其中B中的元素B[i]=A[0]<em>A[1]</em>…<em>A[i-1]</em>A[i+1]<em>…</em>A[n-1]。不能使用除法</p>
+<p>一个整型数组里除了两个数字之外，其他的数字都出现了两次。请写程序找出这两个只出现一次的数字。</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">   	<span class="keyword">public</span> <span class="keyword">int</span>[] multiply(<span class="keyword">int</span>[] A) &#123;</div><div class="line">	<span class="keyword">int</span> length = A.length;</div><div class="line">	<span class="keyword">int</span>[] B = <span class="keyword">new</span> <span class="keyword">int</span>[length];</div><div class="line">	<span class="keyword">if</span> (length != <span class="number">0</span>) &#123;</div><div class="line">		B[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">		<span class="comment">// 计算下三角连乘</span></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; length; i++) &#123;</div><div class="line">			B[i] = B[i - <span class="number">1</span>] * A[i - <span class="number">1</span>];</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">int</span> temp = <span class="number">1</span>;</div><div class="line">		<span class="comment">// 计算上三角</span></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = length - <span class="number">2</span>; j &gt;= <span class="number">0</span>; j--) &#123;</div><div class="line">			temp *= A[j + <span class="number">1</span>];</div><div class="line">			B[j] *= temp;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> B;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line"> * num1,num2分别为长度为1的数组  </div><div class="line"> * 将num1[0],num2[0]设置为返回结果</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">FindNumsAppearOnce</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> num1[], <span class="keyword">int</span> num2[])</span> </span>&#123;</div><div class="line">	<span class="comment">//num,index</span></div><div class="line">	HashMap&lt;Integer, Integer&gt; map1 = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</div><div class="line">	<span class="comment">//num,count</span></div><div class="line">	HashMap&lt;Integer, Integer&gt; map2 = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</div><div class="line">		<span class="keyword">if</span> (!map1.containsKey(array[i])) &#123;</div><div class="line">			map1.put(array[i], i);</div><div class="line">			map2.put(array[i], <span class="number">1</span>);</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			map2.put(array[i], <span class="number">2</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</div><div class="line">		<span class="keyword">if</span>(map2.get(array[i])==<span class="number">1</span>)&#123;</div><div class="line">			list.add(array[i]);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(list.size()==<span class="number">2</span>)&#123;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	num1[<span class="number">0</span>]=list.get(<span class="number">0</span>);</div><div class="line">	num2[<span class="number">0</span>]=list.get(<span class="number">1</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -816,6 +818,154 @@
 <p>统计一个数字在排序数组中出现的次数</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line"> * </div><div class="line"> * <span class="doctag">@param</span> array 数组</div><div class="line"> * <span class="doctag">@param</span> k 查询的数字</div><div class="line"> * <span class="doctag">@return</span> 次数</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">GetNumberOfK</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</div><div class="line">		<span class="keyword">if</span> (array[i] == k) &#123;</div><div class="line">			count++;</div><div class="line">			<span class="keyword">if</span> (i &lt; array.length - <span class="number">1</span> &amp;&amp; array[i] != array[i + <span class="number">1</span>]) &#123; <span class="comment">//有序中断查询</span></div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> count;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/24/算法/剑指offer/数组/构建乘积数组/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zz21y">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zz21y">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/24/算法/剑指offer/数组/构建乘积数组/" itemprop="url">构建乘积数组</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-24T16:56:34+08:00">
+                2017-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/" itemprop="url" rel="index">
+                    <span itemprop="name">剑指offer</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/数组/" itemprop="url" rel="index">
+                    <span itemprop="name">数组</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],<br>其中B中的元素B[i]=A[0]<em>A[1]</em>…<em>A[i-1]</em>A[i+1]<em>…</em>A[n-1]。不能使用除法</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">   	<span class="keyword">public</span> <span class="keyword">int</span>[] multiply(<span class="keyword">int</span>[] A) &#123;</div><div class="line">	<span class="keyword">int</span> length = A.length;</div><div class="line">	<span class="keyword">int</span>[] B = <span class="keyword">new</span> <span class="keyword">int</span>[length];</div><div class="line">	<span class="keyword">if</span> (length != <span class="number">0</span>) &#123;</div><div class="line">		B[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">		<span class="comment">// 计算下三角连乘</span></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; length; i++) &#123;</div><div class="line">			B[i] = B[i - <span class="number">1</span>] * A[i - <span class="number">1</span>];</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">int</span> temp = <span class="number">1</span>;</div><div class="line">		<span class="comment">// 计算上三角</span></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = length - <span class="number">2</span>; j &gt;= <span class="number">0</span>; j--) &#123;</div><div class="line">			temp *= A[j + <span class="number">1</span>];</div><div class="line">			B[j] *= temp;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> B;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -1154,154 +1304,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/24/算法/剑指offer/数组/数组中只出现一次的数字/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zz21y">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/24/算法/剑指offer/数组/数组中只出现一次的数字/" itemprop="url">数组中只出现一次的数字</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-24T16:56:34+08:00">
-                2017-06-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/" itemprop="url" rel="index">
-                    <span itemprop="name">剑指offer</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/知识迁移能力/" itemprop="url" rel="index">
-                    <span itemprop="name">知识迁移能力</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>一个整型数组里除了两个数字之外，其他的数字都出现了两次。请写程序找出这两个只出现一次的数字。</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line"> * num1,num2分别为长度为1的数组  </div><div class="line"> * 将num1[0],num2[0]设置为返回结果</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">FindNumsAppearOnce</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> num1[], <span class="keyword">int</span> num2[])</span> </span>&#123;</div><div class="line">	<span class="comment">//num,index</span></div><div class="line">	HashMap&lt;Integer, Integer&gt; map1 = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</div><div class="line">	<span class="comment">//num,count</span></div><div class="line">	HashMap&lt;Integer, Integer&gt; map2 = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</div><div class="line">		<span class="keyword">if</span> (!map1.containsKey(array[i])) &#123;</div><div class="line">			map1.put(array[i], i);</div><div class="line">			map2.put(array[i], <span class="number">1</span>);</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			map2.put(array[i], <span class="number">2</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</div><div class="line">		<span class="keyword">if</span>(map2.get(array[i])==<span class="number">1</span>)&#123;</div><div class="line">			list.add(array[i]);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(list.size()==<span class="number">2</span>)&#123;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	num1[<span class="number">0</span>]=list.get(<span class="number">0</span>);</div><div class="line">	num2[<span class="number">0</span>]=list.get(<span class="number">1</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/24/算法/剑指offer/数组/数组中重复的数字/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1406,6 +1408,154 @@
             <blockquote>
 <p>在一个长度为n的数组里的所有数字都在0到n-1的范围内。<br>数组中某些数字是重复的，但不知道有几个数字是重复的。<br>也不知道每个数字重复几次。请找出数组中任意一个重复的数字。<br>例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，<br>那么对应的输出是第一个重复的数字2。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">duplicate</span><span class="params">(<span class="keyword">int</span> numbers[],<span class="keyword">int</span> length,<span class="keyword">int</span> [] duplication)</span> </span>&#123;</div><div class="line">   	HashMap&lt;Integer,Integer&gt; map1 = <span class="keyword">new</span> HashMap&lt;Integer,Integer&gt;();</div><div class="line">   	HashMap&lt;Integer,Integer&gt; map2 = <span class="keyword">new</span> HashMap&lt;Integer,Integer&gt;();</div><div class="line">   	<span class="keyword">if</span>(length==<span class="number">0</span>||numbers.equals(<span class="keyword">null</span>))&#123;</div><div class="line">   		duplication[<span class="number">0</span>]=-<span class="number">1</span>;</div><div class="line">   		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">   	&#125;</div><div class="line">   	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numbers.length;i++)&#123;</div><div class="line">   		<span class="keyword">if</span>(!map1.containsKey(numbers[i]))&#123;</div><div class="line">   			map1.put(numbers[i],i);</div><div class="line">   			map2.put(numbers[i], <span class="number">1</span>);</div><div class="line">   		&#125;<span class="keyword">else</span>&#123;</div><div class="line">   			map2.put(numbers[i], <span class="number">2</span>);</div><div class="line">   		&#125;</div><div class="line">   	&#125;</div><div class="line">   	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numbers.length;i++)&#123;</div><div class="line">   		<span class="keyword">if</span>(map2.get(numbers[i])==<span class="number">2</span>)&#123;</div><div class="line">   			duplication[<span class="number">0</span>]=numbers[i];</div><div class="line">   			<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">   		&#125;</div><div class="line">   	&#125;</div><div class="line">   	<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
 </blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/23/算法/剑指offer/数组/连续子数组的最大和/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zz21y">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zz21y">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/23/算法/剑指offer/数组/连续子数组的最大和/" itemprop="url">连续子数组的最大和</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-23T16:56:34+08:00">
+                2017-06-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/" itemprop="url" rel="index">
+                    <span itemprop="name">剑指offer</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/时间效率/" itemprop="url" rel="index">
+                    <span itemprop="name">时间效率</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>HZ偶尔会拿些专业问题来忽悠那些非计算机专业的同学。<br>今天测试组开完会后,他又发话了:在古老的一维模式识别中,<br>常常需要计算连续子向量的最大和,当向量全为正数的时候,<br>问题很好解决。但是,如果向量中包含负数,是否应该包含某个负数,<br>并期望旁边的正数会弥补它呢？例如:{6,-3,-2,7,-15,1,2,2},<br>连续子向量的最大和为8(从第0个开始,到第3个为止)。<br>你会不会被他忽悠住？(子向量的长度至少是1)</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">FindGreatestSumOfSubArray</span><span class="params">(<span class="keyword">int</span>[] array)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> max = array[<span class="number">0</span>];</div><div class="line">	<span class="keyword">int</span> sum = array[<span class="number">0</span>];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; array.length; i++) &#123;</div><div class="line">		sum = sum + array[i];</div><div class="line">		<span class="keyword">if</span> (sum &lt; <span class="number">0</span>) sum = <span class="number">0</span>;</div><div class="line">		max = Math.max(sum, max);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (max == <span class="number">0</span>) &#123;</div><div class="line">		Arrays.sort(array);</div><div class="line">		<span class="keyword">return</span> array[array.length - <span class="number">1</span>];</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> max;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -1588,154 +1738,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/23/算法/剑指offer/数组/整数中1出现的次数（从1到n整数中1出现的次数）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zz21y">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/23/算法/剑指offer/数组/整数中1出现的次数（从1到n整数中1出现的次数）/" itemprop="url">整数中1出现的次数（从1到n整数中1出现的次数）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-23T16:56:34+08:00">
-                2017-06-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/" itemprop="url" rel="index">
-                    <span itemprop="name">剑指offer</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/时间效率/" itemprop="url" rel="index">
-                    <span itemprop="name">时间效率</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>求出1~13的整数中1出现的次数,并算出100~1300的整数中1出现的次数？为此他特别数了一下1~13中包含1的数字有1、10、11、12、13因此共出现6次,但是对于后面问题他就没辙了。ACMer希望你们帮帮他,并把问题更加普遍化,可以很快的求出任意非负整数区间中1出现的次数。</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">NumberOf1Between1AndN_Solution</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line"> StringBuffer sb = <span class="keyword">new</span> StringBuffer();</div><div class="line"> <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++)&#123;</div><div class="line">	 sb.append(i);</div><div class="line"> &#125;</div><div class="line"> <span class="keyword">char</span>[] c = sb.toString().toCharArray();</div><div class="line"> <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line"> <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;c.length;i++)&#123;</div><div class="line">	 <span class="keyword">if</span>(c[i]==<span class="string">'1'</span>)&#123;</div><div class="line">		 count++;</div><div class="line">	 &#125;</div><div class="line"> &#125;</div><div class="line"> <span class="keyword">return</span> count;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1796,7 +1798,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

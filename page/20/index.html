@@ -266,7 +266,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/23/算法/剑指offer/数组/连续子数组的最大和/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/23/算法/剑指offer/数组/整数中1出现的次数（从1到n整数中1出现的次数）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -285,7 +285,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/23/算法/剑指offer/数组/连续子数组的最大和/" itemprop="url">连续子数组的最大和</a></h1>
+                <a class="post-title-link" href="/2017/06/23/算法/剑指offer/数组/整数中1出现的次数（从1到n整数中1出现的次数）/" itemprop="url">整数中1出现的次数（从1到n整数中1出现的次数）</a></h1>
         
 
         <div class="post-meta">
@@ -368,9 +368,9 @@
         
           
             <blockquote>
-<p>HZ偶尔会拿些专业问题来忽悠那些非计算机专业的同学。<br>今天测试组开完会后,他又发话了:在古老的一维模式识别中,<br>常常需要计算连续子向量的最大和,当向量全为正数的时候,<br>问题很好解决。但是,如果向量中包含负数,是否应该包含某个负数,<br>并期望旁边的正数会弥补它呢？例如:{6,-3,-2,7,-15,1,2,2},<br>连续子向量的最大和为8(从第0个开始,到第3个为止)。<br>你会不会被他忽悠住？(子向量的长度至少是1)</p>
+<p>求出1~13的整数中1出现的次数,并算出100~1300的整数中1出现的次数？为此他特别数了一下1~13中包含1的数字有1、10、11、12、13因此共出现6次,但是对于后面问题他就没辙了。ACMer希望你们帮帮他,并把问题更加普遍化,可以很快的求出任意非负整数区间中1出现的次数。</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">FindGreatestSumOfSubArray</span><span class="params">(<span class="keyword">int</span>[] array)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> max = array[<span class="number">0</span>];</div><div class="line">	<span class="keyword">int</span> sum = array[<span class="number">0</span>];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; array.length; i++) &#123;</div><div class="line">		sum = sum + array[i];</div><div class="line">		<span class="keyword">if</span> (sum &lt; <span class="number">0</span>) sum = <span class="number">0</span>;</div><div class="line">		max = Math.max(sum, max);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (max == <span class="number">0</span>) &#123;</div><div class="line">		Arrays.sort(array);</div><div class="line">		<span class="keyword">return</span> array[array.length - <span class="number">1</span>];</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> max;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">NumberOf1Between1AndN_Solution</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line"> StringBuffer sb = <span class="keyword">new</span> StringBuffer();</div><div class="line"> <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++)&#123;</div><div class="line">	 sb.append(i);</div><div class="line"> &#125;</div><div class="line"> <span class="keyword">char</span>[] c = sb.toString().toCharArray();</div><div class="line"> <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line"> <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;c.length;i++)&#123;</div><div class="line">	 <span class="keyword">if</span>(c[i]==<span class="string">'1'</span>)&#123;</div><div class="line">		 count++;</div><div class="line">	 &#125;</div><div class="line"> &#125;</div><div class="line"> <span class="keyword">return</span> count;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -897,7 +897,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
