@@ -95,12 +95,12 @@
 
 <meta name="description" content="乐观的悲观主义者">
 <meta property="og:type" content="website">
-<meta property="og:title" content="zz21y">
+<meta property="og:title" content="汝欲学诗，功夫在诗外">
 <meta property="og:url" content="http://yoursite.com/page/17/index.html">
-<meta property="og:site_name" content="zz21y">
+<meta property="og:site_name" content="汝欲学诗，功夫在诗外">
 <meta property="og:description" content="乐观的悲观主义者">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zz21y">
+<meta name="twitter:title" content="汝欲学诗，功夫在诗外">
 <meta name="twitter:description" content="乐观的悲观主义者">
 
 
@@ -136,7 +136,7 @@
 
 
 
-  <title>zz21y</title>
+  <title>汝欲学诗，功夫在诗外</title>
   
 
 
@@ -174,7 +174,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">zz21y</span>
+        <span class="site-title">汝欲学诗，功夫在诗外</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -267,7 +267,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/算法/剑指offer/位运算/二进制中1的个数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/算法/剑指offer/链表/反转链表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -276,7 +276,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
+      <meta itemprop="name" content="汝欲学诗，功夫在诗外">
     </span>
 
     
@@ -286,7 +286,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/30/算法/剑指offer/位运算/二进制中1的个数/" itemprop="url">二进制中1的个数</a></h1>
+                <a class="post-title-link" href="/2017/06/30/算法/剑指offer/链表/反转链表/" itemprop="url">反转链表</a></h1>
         
 
         <div class="post-meta">
@@ -332,8 +332,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/位运算/" itemprop="url" rel="index">
-                    <span itemprop="name">位运算</span>
+                  <a href="/categories/剑指offer/代码的鲁棒性/" itemprop="url" rel="index">
+                    <span itemprop="name">代码的鲁棒性</span>
                   </a>
                 </span>
 
@@ -369,9 +369,10 @@
         
           
             <blockquote>
-<p>输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示</p>
+<p>输入一个链表，反转链表后，输出链表的所有元素。</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">NumberOf1</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">	String s = Integer.toBinaryString(n);</div><div class="line">	<span class="keyword">int</span> count =<span class="number">0</span>;</div><div class="line">	<span class="keyword">char</span>[] c =s.toCharArray();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;c.length;i++)&#123;</div><div class="line">		<span class="keyword">if</span>(c[i]==<span class="string">'1'</span>)&#123;</div><div class="line">			count++;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> count;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListNode</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> val;</div><div class="line">	ListNode next = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">	ListNode(<span class="keyword">int</span> val) &#123;</div><div class="line">		<span class="keyword">this</span>.val = val;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">ReverseList</span><span class="params">(ListNode head)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (head == <span class="keyword">null</span>)</div><div class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">	ListNode newHead = <span class="keyword">null</span>;</div><div class="line">	ListNode pNode = head;</div><div class="line">	ListNode pPrev = <span class="keyword">null</span>;</div><div class="line">	<span class="keyword">while</span> (pNode != <span class="keyword">null</span>) &#123;</div><div class="line">		ListNode pNext = pNode.next;</div><div class="line">		<span class="keyword">if</span> (pNext == <span class="keyword">null</span>)</div><div class="line">			newHead = pNode;</div><div class="line">		pNode.next = pPrev;</div><div class="line">		pPrev = pNode;</div><div class="line">		pNode = pNext;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> newHead;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -423,7 +424,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
+      <meta itemprop="name" content="汝欲学诗，功夫在诗外">
     </span>
 
     
@@ -562,7 +563,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/算法/剑指offer/位运算/不用加减乘除做加法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/算法/剑指offer/数组/顺时针打印矩阵/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -571,7 +572,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
+      <meta itemprop="name" content="汝欲学诗，功夫在诗外">
     </span>
 
     
@@ -581,7 +582,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/30/算法/剑指offer/位运算/不用加减乘除做加法/" itemprop="url">不用加减乘除做加法</a></h1>
+                <a class="post-title-link" href="/2017/06/30/算法/剑指offer/数组/顺时针打印矩阵/" itemprop="url">顺时针打印矩阵</a></h1>
         
 
         <div class="post-meta">
@@ -627,8 +628,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/发散思维能力/" itemprop="url" rel="index">
-                    <span itemprop="name">发散思维能力</span>
+                  <a href="/categories/剑指offer/抽象形象化/" itemprop="url" rel="index">
+                    <span itemprop="name">抽象形象化</span>
                   </a>
                 </span>
 
@@ -664,9 +665,9 @@
         
           
             <blockquote>
-<p>不使用加减乘除实现加法</p>
+<p>输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，<br>例如，如果输入如下矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10.</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> num1, <span class="keyword">int</span> num2)</span> </span>&#123;</div><div class="line">	<span class="keyword">while</span> (num2 != <span class="number">0</span>) &#123;</div><div class="line">		<span class="keyword">int</span> temp = num1 ^ num2;</div><div class="line">		num2 = (num1 &amp; num2) &lt;&lt; <span class="number">1</span>;</div><div class="line">		num1 = temp;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> num1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ArrayList&lt;Integer&gt; <span class="title">printMatrix</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</div><div class="line">	ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">	<span class="keyword">int</span> tR = <span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> tC = <span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> dR = matrix.length - <span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> dC = matrix[<span class="number">0</span>].length - <span class="number">1</span>;</div><div class="line">	<span class="keyword">while</span> (tR &lt;= dR &amp;&amp; tC &lt;= dC) &#123;</div><div class="line">		<span class="keyword">if</span> (tR == dR) &#123; <span class="comment">// 子矩阵只有一行时</span></div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = tC; i &lt;= dC; i++) &#123;</div><div class="line">				list.add(matrix[tR][i]);</div><div class="line">			&#125;</div><div class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (tC == dC) &#123; <span class="comment">// 子矩阵只有一列时</span></div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = tR; i &lt;= dR; i++) &#123;</div><div class="line">				list.add(matrix[i][tC]);</div><div class="line">			&#125;</div><div class="line">		&#125; <span class="keyword">else</span> &#123; <span class="comment">// 一般情况</span></div><div class="line">			<span class="keyword">int</span> curC = tC;</div><div class="line">			<span class="keyword">int</span> curR = tR;</div><div class="line">			<span class="keyword">while</span> (curC != dC) &#123;</div><div class="line">				list.add(matrix[tR][curC]);</div><div class="line">				curC++;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">while</span> (curR != dR) &#123;</div><div class="line">				list.add(matrix[curR][dC]);</div><div class="line">				curR++;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">while</span> (curC != tC) &#123;</div><div class="line">				list.add(matrix[dR][curC]);</div><div class="line">				curC--;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">while</span> (curR != tR) &#123;</div><div class="line">				list.add(matrix[curR][tC]);</div><div class="line">				curR--;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		tR++;</div><div class="line">		tC++;</div><div class="line">		dR--;</div><div class="line">		dC--;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> list;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -718,7 +719,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
+      <meta itemprop="name" content="汝欲学诗，功夫在诗外">
     </span>
 
     
@@ -858,155 +859,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/29/算法/剑指offer/链表/合并两个排序的链表/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zz21y">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/29/算法/剑指offer/链表/合并两个排序的链表/" itemprop="url">合并两个排序的列表</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T14:12:11+08:00">
-                2017-06-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/" itemprop="url" rel="index">
-                    <span itemprop="name">剑指offer</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/代码的鲁棒性/" itemprop="url" rel="index">
-                    <span itemprop="name">代码的鲁棒性</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListNode</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> val;</div><div class="line">	ListNode next = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">	ListNode(<span class="keyword">int</span> val) &#123;</div><div class="line">		<span class="keyword">this</span>.val = val;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">Merge</span><span class="params">(ListNode list1, ListNode list2)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (list1 == <span class="keyword">null</span>) &#123;</div><div class="line">		<span class="keyword">return</span> list2;</div><div class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (list2 == <span class="keyword">null</span>) &#123;</div><div class="line">		<span class="keyword">return</span> list1;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		ListNode head = list1.val &lt; list2.val ? list1 : list2;</div><div class="line">		ListNode cur1 = head == list1 ? list1 : list2;</div><div class="line">		ListNode cur2 = head == list1 ? list2 : list1;</div><div class="line">		ListNode pre = <span class="keyword">null</span>;</div><div class="line">		ListNode nx = <span class="keyword">null</span>;</div><div class="line">		<span class="keyword">while</span> (cur1 != <span class="keyword">null</span> &amp;&amp; cur2 != <span class="keyword">null</span>) &#123;</div><div class="line">			<span class="keyword">if</span> (cur1.val &lt;= cur2.val) &#123;</div><div class="line">				pre = cur1;</div><div class="line">				cur1 = cur1.next;</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				nx = cur2.next;</div><div class="line">				pre.next = cur2;</div><div class="line">				cur2.next = cur1;</div><div class="line">				pre = cur2;</div><div class="line">				cur2 = nx;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		pre.next = cur1 == <span class="keyword">null</span> ? cur2 : cur1;</div><div class="line">		<span class="keyword">return</span> head;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/29/算法/剑指offer/链表/两个链表的第一个公共结点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1016,7 +868,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
+      <meta itemprop="name" content="汝欲学诗，功夫在诗外">
     </span>
 
     
@@ -1156,6 +1008,303 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/29/算法/剑指offer/链表/合并两个排序的链表/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zz21y">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="汝欲学诗，功夫在诗外">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/29/算法/剑指offer/链表/合并两个排序的链表/" itemprop="url">合并两个排序的列表</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T14:12:11+08:00">
+                2017-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/" itemprop="url" rel="index">
+                    <span itemprop="name">剑指offer</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/代码的鲁棒性/" itemprop="url" rel="index">
+                    <span itemprop="name">代码的鲁棒性</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListNode</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> val;</div><div class="line">	ListNode next = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">	ListNode(<span class="keyword">int</span> val) &#123;</div><div class="line">		<span class="keyword">this</span>.val = val;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">Merge</span><span class="params">(ListNode list1, ListNode list2)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (list1 == <span class="keyword">null</span>) &#123;</div><div class="line">		<span class="keyword">return</span> list2;</div><div class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (list2 == <span class="keyword">null</span>) &#123;</div><div class="line">		<span class="keyword">return</span> list1;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		ListNode head = list1.val &lt; list2.val ? list1 : list2;</div><div class="line">		ListNode cur1 = head == list1 ? list1 : list2;</div><div class="line">		ListNode cur2 = head == list1 ? list2 : list1;</div><div class="line">		ListNode pre = <span class="keyword">null</span>;</div><div class="line">		ListNode nx = <span class="keyword">null</span>;</div><div class="line">		<span class="keyword">while</span> (cur1 != <span class="keyword">null</span> &amp;&amp; cur2 != <span class="keyword">null</span>) &#123;</div><div class="line">			<span class="keyword">if</span> (cur1.val &lt;= cur2.val) &#123;</div><div class="line">				pre = cur1;</div><div class="line">				cur1 = cur1.next;</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				nx = cur2.next;</div><div class="line">				pre.next = cur2;</div><div class="line">				cur2.next = cur1;</div><div class="line">				pre = cur2;</div><div class="line">				cur2 = nx;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		pre.next = cur1 == <span class="keyword">null</span> ? cur2 : cur1;</div><div class="line">		<span class="keyword">return</span> head;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/栈和队列/包含min函数的栈/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zz21y">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="汝欲学诗，功夫在诗外">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/26/算法/剑指offer/栈和队列/包含min函数的栈/" itemprop="url">包含min函数的栈</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T17:31:30+08:00">
+                2017-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/" itemprop="url" rel="index">
+                    <span itemprop="name">剑指offer</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/抽象具体化/" itemprop="url" rel="index">
+                    <span itemprop="name">抽象具体化</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>定义栈的数据结构，请在该类型中实现一个能够得到栈最小元素的min函数。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">private</span> Stack&lt;Integer&gt; stackDate = <span class="keyword">new</span> Stack&lt;Integer&gt;();</div><div class="line">   <span class="keyword">private</span> Stack&lt;Integer&gt; stackMin = <span class="keyword">new</span> Stack&lt;Integer&gt;();</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> node)</span> </span>&#123;</div><div class="line">       stackDate.push(node);</div><div class="line">       <span class="keyword">if</span>(stackMin.isEmpty()||stackMin.peek()&gt;=node)&#123;</div><div class="line">           stackMin.push(node);</div><div class="line">       &#125;<span class="keyword">else</span>&#123;</div><div class="line">           stackMin.push(stackMin.peek());</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">     </div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</div><div class="line">       stackDate.pop();</div><div class="line">       stackMin.pop();</div><div class="line">   &#125;</div><div class="line">     </div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</div><div class="line">       <span class="keyword">return</span> stackDate.peek();</div><div class="line">   &#125;</div><div class="line">     </div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">min</span><span class="params">()</span> </span>&#123;</div><div class="line">       <span class="keyword">return</span> stackMin.peek();</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/递归和循环/跳台阶/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1165,7 +1314,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
+      <meta itemprop="name" content="汝欲学诗，功夫在诗外">
     </span>
 
     
@@ -1314,302 +1463,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/栈和队列/栈的压入、弹出序列/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zz21y">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/26/算法/剑指offer/栈和队列/栈的压入、弹出序列/" itemprop="url">栈的压入和弹出序列</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T17:31:30+08:00">
-                2017-06-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/" itemprop="url" rel="index">
-                    <span itemprop="name">剑指offer</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/抽象具体化/" itemprop="url" rel="index">
-                    <span itemprop="name">抽象具体化</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。<br>假设压入栈的所有数字均不相等。<br>例如序列1,2,3,4,5是某栈的压入顺序，序列4，5,3,2,1是该压栈序列对应的一个弹出序列，<br>但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等 的）</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">IsPopOrder</span><span class="params">(<span class="keyword">int</span>[] pushA, <span class="keyword">int</span>[] popA)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (pushA.length == <span class="number">0</span> || popA.length == <span class="number">0</span> || pushA.equals(<span class="keyword">null</span>) || popA.equals(<span class="keyword">null</span>)) &#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	&#125;</div><div class="line">	Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</div><div class="line">	<span class="keyword">int</span> j=<span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; pushA.length; i++) &#123;</div><div class="line">		stack.push(pushA[i]);</div><div class="line">		<span class="keyword">while</span> (j &lt; popA.length &amp;&amp; stack.peek() == popA[j]) &#123;</div><div class="line">			stack.pop();</div><div class="line">			j++;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> stack.empty();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/栈和队列/包含min函数的栈/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zz21y">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/26/算法/剑指offer/栈和队列/包含min函数的栈/" itemprop="url">包含min函数的栈</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T17:31:30+08:00">
-                2017-06-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/" itemprop="url" rel="index">
-                    <span itemprop="name">剑指offer</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/抽象具体化/" itemprop="url" rel="index">
-                    <span itemprop="name">抽象具体化</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>定义栈的数据结构，请在该类型中实现一个能够得到栈最小元素的min函数。</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">private</span> Stack&lt;Integer&gt; stackDate = <span class="keyword">new</span> Stack&lt;Integer&gt;();</div><div class="line">   <span class="keyword">private</span> Stack&lt;Integer&gt; stackMin = <span class="keyword">new</span> Stack&lt;Integer&gt;();</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> node)</span> </span>&#123;</div><div class="line">       stackDate.push(node);</div><div class="line">       <span class="keyword">if</span>(stackMin.isEmpty()||stackMin.peek()&gt;=node)&#123;</div><div class="line">           stackMin.push(node);</div><div class="line">       &#125;<span class="keyword">else</span>&#123;</div><div class="line">           stackMin.push(stackMin.peek());</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">     </div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</div><div class="line">       stackDate.pop();</div><div class="line">       stackMin.pop();</div><div class="line">   &#125;</div><div class="line">     </div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</div><div class="line">       <span class="keyword">return</span> stackDate.peek();</div><div class="line">   &#125;</div><div class="line">     </div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">min</span><span class="params">()</span> </span>&#123;</div><div class="line">       <span class="keyword">return</span> stackMin.peek();</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/栈和队列/用两个栈实现队列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1619,7 +1472,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
+      <meta itemprop="name" content="汝欲学诗，功夫在诗外">
     </span>
 
     
@@ -1715,6 +1568,154 @@
 <p>用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Stack&lt;Integer&gt; stack1 = <span class="keyword">new</span> Stack&lt;Integer&gt;();</div><div class="line">Stack&lt;Integer&gt; stack2 = <span class="keyword">new</span> Stack&lt;Integer&gt;();</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> node)</span> </span>&#123;</div><div class="line">	stack1.push(node);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">while</span> (!stack2.isEmpty()) &#123;</div><div class="line">		stack2.push(stack1.pop());</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> n = stack2.pop();</div><div class="line">	<span class="keyword">while</span>(!stack1.isEmpty())&#123;</div><div class="line">		stack1.push(stack2.pop());</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> n;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/栈和队列/栈的压入、弹出序列/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zz21y">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="汝欲学诗，功夫在诗外">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/26/算法/剑指offer/栈和队列/栈的压入、弹出序列/" itemprop="url">栈的压入和弹出序列</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T17:31:30+08:00">
+                2017-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/" itemprop="url" rel="index">
+                    <span itemprop="name">剑指offer</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/抽象具体化/" itemprop="url" rel="index">
+                    <span itemprop="name">抽象具体化</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。<br>假设压入栈的所有数字均不相等。<br>例如序列1,2,3,4,5是某栈的压入顺序，序列4，5,3,2,1是该压栈序列对应的一个弹出序列，<br>但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等 的）</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">IsPopOrder</span><span class="params">(<span class="keyword">int</span>[] pushA, <span class="keyword">int</span>[] popA)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (pushA.length == <span class="number">0</span> || popA.length == <span class="number">0</span> || pushA.equals(<span class="keyword">null</span>) || popA.equals(<span class="keyword">null</span>)) &#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	&#125;</div><div class="line">	Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</div><div class="line">	<span class="keyword">int</span> j=<span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; pushA.length; i++) &#123;</div><div class="line">		stack.push(pushA[i]);</div><div class="line">		<span class="keyword">while</span> (j &lt; popA.length &amp;&amp; stack.peek() == popA[j]) &#123;</div><div class="line">			stack.pop();</div><div class="line">			j++;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> stack.empty();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         

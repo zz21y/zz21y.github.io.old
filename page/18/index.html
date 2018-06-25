@@ -95,12 +95,12 @@
 
 <meta name="description" content="乐观的悲观主义者">
 <meta property="og:type" content="website">
-<meta property="og:title" content="zz21y">
+<meta property="og:title" content="汝欲学诗，功夫在诗外">
 <meta property="og:url" content="http://yoursite.com/page/18/index.html">
-<meta property="og:site_name" content="zz21y">
+<meta property="og:site_name" content="汝欲学诗，功夫在诗外">
 <meta property="og:description" content="乐观的悲观主义者">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zz21y">
+<meta name="twitter:title" content="汝欲学诗，功夫在诗外">
 <meta name="twitter:description" content="乐观的悲观主义者">
 
 
@@ -136,7 +136,7 @@
 
 
 
-  <title>zz21y</title>
+  <title>汝欲学诗，功夫在诗外</title>
   
 
 
@@ -174,7 +174,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">zz21y</span>
+        <span class="site-title">汝欲学诗，功夫在诗外</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -267,6 +267,155 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/树/从上往下打印二叉树/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zz21y">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="汝欲学诗，功夫在诗外">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/26/算法/剑指offer/树/从上往下打印二叉树/" itemprop="url">从上往下打印二叉树</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T17:30:22+08:00">
+                2017-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/" itemprop="url" rel="index">
+                    <span itemprop="name">剑指offer</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指offer/抽象具体化/" itemprop="url" rel="index">
+                    <span itemprop="name">抽象具体化</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>从上往下打印出二叉树的每个节点，同层节点从左至右打印。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> val = <span class="number">0</span>;</div><div class="line">	TreeNode left = <span class="keyword">null</span>;</div><div class="line">	TreeNode right = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">TreeNode</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.val = val;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> ArrayList&lt;Integer&gt; <span class="title">PrintFromTopToBottom</span><span class="params">(TreeNode root)</span> </span>&#123;</div><div class="line">	ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">	<span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</div><div class="line">		<span class="keyword">return</span> list;</div><div class="line">	&#125;</div><div class="line">	Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;TreeNode&gt;();</div><div class="line">	TreeNode last = root;</div><div class="line">	TreeNode nlast = <span class="keyword">null</span>;</div><div class="line">	TreeNode tmp = <span class="keyword">null</span>;</div><div class="line">	List&lt;List&lt;Integer&gt;&gt; value = <span class="keyword">new</span> ArrayList&lt;List&lt;Integer&gt;&gt;();</div><div class="line">	List&lt;Integer&gt; arr = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">	queue.add(last);</div><div class="line">	tmp = queue.poll();</div><div class="line">	<span class="keyword">while</span> (tmp != <span class="keyword">null</span>) &#123;</div><div class="line">		<span class="keyword">if</span> (tmp.left != <span class="keyword">null</span>) &#123;</div><div class="line">			queue.add(tmp.left);</div><div class="line">			nlast = tmp.left;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (tmp.right != <span class="keyword">null</span>) &#123;</div><div class="line">			queue.add(tmp.right);</div><div class="line">			nlast = tmp.right;</div><div class="line">		&#125;</div><div class="line">		arr.add(tmp.val);</div><div class="line">		<span class="keyword">if</span> (tmp == last) &#123;</div><div class="line">			last = nlast;</div><div class="line">			value.add(arr);</div><div class="line">			arr = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">		&#125;</div><div class="line">		tmp = queue.poll();</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span>[][] result = <span class="keyword">new</span> <span class="keyword">int</span>[value.size()][];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; value.size(); i++) &#123;</div><div class="line">		result[i] = <span class="keyword">new</span> <span class="keyword">int</span>[value.get(i).size()];</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; value.get(i).size(); j++) &#123;</div><div class="line">			result[i][j] = value.get(i).get(j);</div><div class="line">			list.add(result[i][j]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> list;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/树/二叉树中和为某一值的路径/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -276,7 +425,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
+      <meta itemprop="name" content="汝欲学诗，功夫在诗外">
     </span>
 
     
@@ -425,7 +574,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
+      <meta itemprop="name" content="汝欲学诗，功夫在诗外">
     </span>
 
     
@@ -565,7 +714,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/树/从上往下打印二叉树/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/树/树的子结构/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -574,7 +723,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
+      <meta itemprop="name" content="汝欲学诗，功夫在诗外">
     </span>
 
     
@@ -584,7 +733,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/26/算法/剑指offer/树/从上往下打印二叉树/" itemprop="url">从上往下打印二叉树</a></h1>
+                <a class="post-title-link" href="/2017/06/26/算法/剑指offer/树/树的子结构/" itemprop="url">树的子结构</a></h1>
         
 
         <div class="post-meta">
@@ -596,7 +745,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T17:30:22+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T17:27:22+08:00">
                 2017-06-26
               </time>
             
@@ -630,8 +779,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/抽象具体化/" itemprop="url" rel="index">
-                    <span itemprop="name">抽象具体化</span>
+                  <a href="/categories/剑指offer/代码的鲁棒性/" itemprop="url" rel="index">
+                    <span itemprop="name">代码的鲁棒性</span>
                   </a>
                 </span>
 
@@ -667,10 +816,10 @@
         
           
             <blockquote>
-<p>从上往下打印出二叉树的每个节点，同层节点从左至右打印。</p>
+<p>输入两棵二叉树A，B，判断B是不是A的子结构。（ps：我们约定空树不是任意一个树的子结构）</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> val = <span class="number">0</span>;</div><div class="line">	TreeNode left = <span class="keyword">null</span>;</div><div class="line">	TreeNode right = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">TreeNode</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.val = val;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> ArrayList&lt;Integer&gt; <span class="title">PrintFromTopToBottom</span><span class="params">(TreeNode root)</span> </span>&#123;</div><div class="line">	ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">	<span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</div><div class="line">		<span class="keyword">return</span> list;</div><div class="line">	&#125;</div><div class="line">	Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;TreeNode&gt;();</div><div class="line">	TreeNode last = root;</div><div class="line">	TreeNode nlast = <span class="keyword">null</span>;</div><div class="line">	TreeNode tmp = <span class="keyword">null</span>;</div><div class="line">	List&lt;List&lt;Integer&gt;&gt; value = <span class="keyword">new</span> ArrayList&lt;List&lt;Integer&gt;&gt;();</div><div class="line">	List&lt;Integer&gt; arr = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">	queue.add(last);</div><div class="line">	tmp = queue.poll();</div><div class="line">	<span class="keyword">while</span> (tmp != <span class="keyword">null</span>) &#123;</div><div class="line">		<span class="keyword">if</span> (tmp.left != <span class="keyword">null</span>) &#123;</div><div class="line">			queue.add(tmp.left);</div><div class="line">			nlast = tmp.left;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (tmp.right != <span class="keyword">null</span>) &#123;</div><div class="line">			queue.add(tmp.right);</div><div class="line">			nlast = tmp.right;</div><div class="line">		&#125;</div><div class="line">		arr.add(tmp.val);</div><div class="line">		<span class="keyword">if</span> (tmp == last) &#123;</div><div class="line">			last = nlast;</div><div class="line">			value.add(arr);</div><div class="line">			arr = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">		&#125;</div><div class="line">		tmp = queue.poll();</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span>[][] result = <span class="keyword">new</span> <span class="keyword">int</span>[value.size()][];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; value.size(); i++) &#123;</div><div class="line">		result[i] = <span class="keyword">new</span> <span class="keyword">int</span>[value.get(i).size()];</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; value.get(i).size(); j++) &#123;</div><div class="line">			result[i][j] = value.get(i).get(j);</div><div class="line">			list.add(result[i][j]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> list;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> val = <span class="number">0</span>;</div><div class="line">	TreeNode left = <span class="keyword">null</span>;</div><div class="line">	TreeNode right = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">TreeNode</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.val = val;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">HasSubtree</span><span class="params">(TreeNode root1, TreeNode root2)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span>(root1==<span class="keyword">null</span>||root2==<span class="keyword">null</span>)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> check(root1,root2)||check(root1.left,root2)||check(root1.right,root2);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">check</span><span class="params">(TreeNode h,TreeNode t2)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(t2==<span class="keyword">null</span>)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(h==<span class="keyword">null</span>||h.val!=t2.val)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> check(h.left,t2.left)&amp;&amp;check(h.right,t2.right);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -723,7 +872,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
+      <meta itemprop="name" content="汝欲学诗，功夫在诗外">
     </span>
 
     
@@ -872,7 +1021,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
+      <meta itemprop="name" content="汝欲学诗，功夫在诗外">
     </span>
 
     
@@ -1012,155 +1161,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/树/树的子结构/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zz21y">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/26/算法/剑指offer/树/树的子结构/" itemprop="url">树的子结构</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T17:27:22+08:00">
-                2017-06-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/" itemprop="url" rel="index">
-                    <span itemprop="name">剑指offer</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/代码的鲁棒性/" itemprop="url" rel="index">
-                    <span itemprop="name">代码的鲁棒性</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>输入两棵二叉树A，B，判断B是不是A的子结构。（ps：我们约定空树不是任意一个树的子结构）</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> val = <span class="number">0</span>;</div><div class="line">	TreeNode left = <span class="keyword">null</span>;</div><div class="line">	TreeNode right = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">TreeNode</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.val = val;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">HasSubtree</span><span class="params">(TreeNode root1, TreeNode root2)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span>(root1==<span class="keyword">null</span>||root2==<span class="keyword">null</span>)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> check(root1,root2)||check(root1.left,root2)||check(root1.right,root2);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">check</span><span class="params">(TreeNode h,TreeNode t2)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(t2==<span class="keyword">null</span>)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(h==<span class="keyword">null</span>||h.val!=t2.val)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> check(h.left,t2.left)&amp;&amp;check(h.right,t2.right);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/递归和循环/斐波那契数列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1170,7 +1170,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
+      <meta itemprop="name" content="汝欲学诗，功夫在诗外">
     </span>
 
     
@@ -1320,7 +1320,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
+      <meta itemprop="name" content="汝欲学诗，功夫在诗外">
     </span>
 
     
@@ -1460,7 +1460,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/链表/从尾到头打印链表/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/字符串/字符流中第一个不重复的字符/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -1469,7 +1469,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
+      <meta itemprop="name" content="汝欲学诗，功夫在诗外">
     </span>
 
     
@@ -1479,7 +1479,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/26/算法/剑指offer/链表/从尾到头打印链表/" itemprop="url">从尾到头打印链表</a></h1>
+                <a class="post-title-link" href="/2017/06/26/算法/剑指offer/字符串/字符流中第一个不重复的字符/" itemprop="url">字符流中第一个不重复的字符</a></h1>
         
 
         <div class="post-meta">
@@ -1525,8 +1525,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/代码的鲁棒性/" itemprop="url" rel="index">
-                    <span itemprop="name">代码的鲁棒性</span>
+                  <a href="/categories/剑指offer/字符串/" itemprop="url" rel="index">
+                    <span itemprop="name">字符串</span>
                   </a>
                 </span>
 
@@ -1562,11 +1562,9 @@
         
           
             <blockquote>
-<p>输入一个链表，从尾到头打印链表每个节点的值。</p>
+<p>请实现一个函数用来找出字符流中第一个只出现一次的字符。例如，当从字符流中只读出前两个字符”go”时，第一个只出现一次的字符是”g”。当从该字符流中读出前六个字符“google”时，第一个只出现一次的字符是”l”。<br>输出描述:<br>如果当前字符流没有存在出现一次的字符，返回#字符。</p>
 </blockquote>
-<p>思路：利用栈来完成逆序</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListNode</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> val;</div><div class="line">	ListNode next = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">	ListNode(<span class="keyword">int</span> val) &#123;</div><div class="line">		<span class="keyword">this</span>.val = val;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> ArrayList&lt;Integer&gt; <span class="title">printListFromTailToHead</span><span class="params">(ListNode listNode)</span> </span>&#123;</div><div class="line">		ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">		Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</div><div class="line">		<span class="keyword">while</span> (listNode.next != <span class="keyword">null</span>) &#123;</div><div class="line">			stack.push(listNode.val);</div><div class="line">			listNode = listNode.next;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">while</span>(!stack.isEmpty())&#123;</div><div class="line">			list.add(stack.pop());</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> list;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">HashMap&lt;Character, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Character, Integer&gt;();</div><div class="line">ArrayList&lt;Character&gt; list = <span class="keyword">new</span> ArrayList&lt;Character&gt;();</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Insert</span><span class="params">(<span class="keyword">char</span> ch)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (!map.containsKey(ch)) &#123;</div><div class="line">		map.put(ch, <span class="number">1</span>);</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		map.put(ch, <span class="number">2</span>);</div><div class="line">	&#125;</div><div class="line">	list.add(ch);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// return the first appearence once char in current stringstream</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">char</span> <span class="title">FirstAppearingOnce</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">char</span> key : list) &#123;</div><div class="line">		<span class="keyword">if</span> (map.get(key) == <span class="number">1</span>) &#123;</div><div class="line">			<span class="keyword">return</span> key;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="string">'#'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -1610,7 +1608,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/字符串/第一个只出现一次的字符位置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/算法/剑指offer/字符串/左旋转字符串/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zz21y">
@@ -1619,7 +1617,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zz21y">
+      <meta itemprop="name" content="汝欲学诗，功夫在诗外">
     </span>
 
     
@@ -1629,7 +1627,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/26/算法/剑指offer/字符串/第一个只出现一次的字符位置/" itemprop="url">第一个只出现一次的字符位置</a></h1>
+                <a class="post-title-link" href="/2017/06/26/算法/剑指offer/字符串/左旋转字符串/" itemprop="url">左旋转字符串</a></h1>
         
 
         <div class="post-meta">
@@ -1675,8 +1673,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/时间空间效率的平衡/" itemprop="url" rel="index">
-                    <span itemprop="name">时间空间效率的平衡</span>
+                  <a href="/categories/剑指offer/知识迁移能力/" itemprop="url" rel="index">
+                    <span itemprop="name">知识迁移能力</span>
                   </a>
                 </span>
 
@@ -1712,9 +1710,12 @@
         
           
             <blockquote>
-<p>在一个字符串(1&lt;=字符串长度&lt;=10000，全部由字母组成)中找到第一个只出现一次的字符,并返回它的位置。</p>
+<p>对于一个给定的字符序列S，请你把其循环左移K位后的序列输出。 例如，字符序列S=”abcXYZdef”,要求输出循环左移3位后的结果，</p>
+<ul>
+<li>即“XYZdefabc”。</li>
+</ul>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">FirstNotRepeatingChar</span><span class="params">(String str)</span> </span>&#123;</div><div class="line">	HashMap&lt;Character, Integer&gt; map1 = <span class="keyword">new</span> HashMap&lt;Character, Integer&gt;();</div><div class="line">	HashMap&lt;Character, Integer&gt; map2 = <span class="keyword">new</span> HashMap&lt;Character, Integer&gt;();</div><div class="line">	<span class="keyword">char</span>[] c = str.toCharArray();</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; c.length; i++) &#123;</div><div class="line">		<span class="keyword">if</span> (!map1.containsKey(c[i])) &#123;</div><div class="line">			map1.put(c[i], i);</div><div class="line">			map2.put(c[i], <span class="number">1</span>);</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			map2.put(c[i], <span class="number">2</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; c.length; i++) &#123;</div><div class="line">		<span class="keyword">if</span> (map2.get(c[i]) == <span class="number">1</span>) &#123;</div><div class="line">			<span class="keyword">return</span> map1.get(c[i]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">LeftRotateString</span><span class="params">(String str, <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span>(str.length()==<span class="number">0</span>)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">""</span>;</div><div class="line">	&#125;</div><div class="line">	StringBuffer sb = <span class="keyword">new</span> StringBuffer();</div><div class="line">	sb.append(str.substring(n,str.length()));</div><div class="line">	sb.append(str.substring(<span class="number">0</span>,n));</div><div class="line">	<span class="keyword">return</span> sb.toString();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
